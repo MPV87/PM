@@ -123,17 +123,29 @@
 
     .brand {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 16px;
       line-height: 1;
     }
 
-    .brand strong {
+    .brand img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text strong {
       font-size: 28px;
       letter-spacing: -0.04em;
       color: var(--white);
     }
 
-    .brand span {
+    .brand-text span {
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -145,6 +157,7 @@
       display: flex;
       gap: 22px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .nav-links a {
@@ -157,6 +170,13 @@
 
     .nav-links a:hover {
       color: var(--white);
+    }
+
+    .social-link {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
     }
 
     .hero {
@@ -243,7 +263,7 @@
         rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.10);
       box-shadow: var(--shadow);
-      overflow: hidden;
+      overflow: visible;
     }
 
     .hero-card::after {
@@ -254,6 +274,7 @@
       height: 220px;
       background: radial-gradient(circle, rgba(198,164,106,0.18), transparent 70%);
       filter: blur(20px);
+      z-index: 1;
     }
 
     .hero-card img {
@@ -261,20 +282,25 @@
       height: auto;
       object-fit: contain;
       filter: drop-shadow(0 30px 40px rgba(0,0,0,0.55));
+      position: relative;
+      z-index: 2;
     }
 
     .hero-badge {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 18px;
+      right: 18px;
       font-size: 12px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--gold-soft);
-      padding: 10px 12px;
+      color: #16110a;
+      padding: 12px 16px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, #e4c58e 0%, #c79f61 100%);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      z-index: 5;
+      font-weight: 700;
     }
 
     .stats {
@@ -575,6 +601,20 @@
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
     }
 
     @media (max-width: 1080px) {
@@ -625,7 +665,7 @@
       }
 
       .nav-links {
-        gap: 14px;
+        gap: 12px;
       }
 
       .hero {
@@ -636,6 +676,11 @@
       .hero-card {
         padding: 22px;
         border-radius: 24px;
+      }
+
+      .hero-badge {
+        top: -12px;
+        right: 10px;
       }
 
       .focus-card {
@@ -657,6 +702,14 @@
       .faq-question {
         font-size: 17px;
       }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand img {
+        height: 36px;
+      }
     }
   </style>
 </head>
@@ -665,8 +718,11 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand">
-        <strong>Zorr Powermatic</strong>
-        <span>Premium Cigarette Injectors</span>
+        <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
+        <div class="brand-text">
+          <strong>Zorr Powermatic</strong>
+          <span>Premium Cigarette Injectors</span>
+        </div>
       </a>
 
       <div class="nav-links">
@@ -675,6 +731,8 @@
         <a href="#pflege">Pflege</a>
         <a href="#faq">FAQ</a>
         <a href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Kontakt</a>
+        <a class="social-link" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social-link" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
   </nav>
@@ -1049,7 +1107,11 @@
         <span class="eyebrow">Kontakt</span>
         <h2>Fragen zu Zorr Powermatic?</h2>
         <p class="lead" style="margin:0 auto 24px;">Für Informationen zu den Modellen oder zur passenden Maschine für Ihren Bedarf.</p>
-        <a class="btn btn-primary" href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Jetzt Kontakt aufnehmen</a>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Jetzt Kontakt aufnehmen</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="btn btn-secondary" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1058,7 +1120,10 @@
     <div class="container">
       <div class="footer-line">
         <div>© Zorr Powermatic</div>
-        <div>Informationsseite zu den Zorr Powermatic Modellen</div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
       </div>
     </div>
   </footer>
