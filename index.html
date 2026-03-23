@@ -3,14 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zorr Powermatic – Premium Stopfmaschinen</title>
-  <meta name="description" content="Die Zorr Powermatic Serie im Überblick – von der kompakten Einstiegslösung bis zur vollautomatischen Premium-Stopfmaschine." />
+
+  <title>Zorr Powermatic – Premium Stopfmaschinen im Überblick</title>
+  <meta name="description" content="Die Zorr Powermatic Serie im Überblick: von der Powermatic Mini bis zur vollautomatischen Zorr Powermatic V+ Deluxe. Vergleich, Pflege, Wartung, FAQ und Premium-Modelle 3+ Deluxe und 5+ Deluxe." />
+  <meta name="keywords" content="Zorr Powermatic, Powermatic 3+ Deluxe, Powermatic V+ Deluxe, Powermatic Stopfmaschine, elektrische Stopfmaschine, vollautomatische Stopfmaschine, Zorr Powermatic Vergleich, Powermatic Pflege, Powermatic Wartung" />
+  <meta name="author" content="KP Plattner" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zorr-powermatic.com/" />
+
+  <meta property="og:title" content="Zorr Powermatic – Premium Stopfmaschinen im Überblick" />
+  <meta property="og:description" content="Alle Zorr Powermatic Modelle im Überblick – inklusive Vergleich, Wartung, FAQ und Fokus auf Powermatic III+ Deluxe und V+ Deluxe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zorr-powermatic.com/" />
+  <meta property="og:image" content="https://zorr-powermatic.com/images/powermatic-5-deluxe.png" />
+  <meta property="og:locale" content="de_AT" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zorr Powermatic – Premium Stopfmaschinen im Überblick" />
+  <meta name="twitter:description" content="Die Zorr Powermatic Serie: Vergleich, Highlights, Wartung und FAQ." />
+  <meta name="twitter:image" content="https://zorr-powermatic.com/images/powermatic-5-deluxe.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Zorr Powermatic",
+    "url":"https://zorr-powermatic.com/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Zorr Powermatic",
+    "url":"https://zorr-powermatic.com/",
+    "logo":"https://zorr-powermatic.com/images/Zorr-Powermatic-Logo.png",
+    "sameAs":[
+      "https://www.instagram.com/zorr_powermatic",
+      "https://www.youtube.com/@ZORR_Official"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Welche Powermatic ist für Einsteiger geeignet?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Für Einsteiger eignen sich vor allem die Powermatic Mini und die Powermatic I+ Elite. Wer bereits mehr Komfort möchte, findet in der Powermatic II+ einen starken elektrischen Einstieg."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Welche Modelle bieten den höchsten Komfort?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Besonders komfortabel sind die Powermatic III+ Deluxe und die Powermatic V+ Deluxe. Die V+ Deluxe ist das Topmodell mit vollautomatischer Funktion und maximalem Bedienkomfort."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Warum ist Reinigung so wichtig?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Tabakreste im Stopfkanal oder im Gerät können die Funktion beeinträchtigen und zu ungleichmäßigen Ergebnissen führen. Regelmäßige Reinigung hilft, die Leistung konstant zu halten und Verschleiß zu reduzieren."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Was ist der Unterschied zwischen III+ Deluxe und V+ Deluxe?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Die Powermatic III+ Deluxe ist eine elektrische Premiumlösung mit automatisierter Dosierung und digitalem Bedienkonzept. Die Powermatic V+ Deluxe bietet als vollautomatisches Topmodell zusätzlichen Komfort mit Hülsenmagazin, Zähler und Reinigungsfunktion."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #0a0a0a;
       --bg-soft: #111111;
       --panel: rgba(255,255,255,0.04);
-      --panel-strong: rgba(255,255,255,0.06);
       --line: rgba(255,255,255,0.10);
       --text: #f5f1ea;
       --muted: #b7aea2;
@@ -18,9 +99,9 @@
       --gold-soft: #e2c38f;
       --white: #ffffff;
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
-      --radius: 24px;
-      --radius-sm: 16px;
       --max: 1240px;
+      --ease: 280ms ease;
+      --nav-h: 82px;
     }
 
     * {
@@ -40,6 +121,7 @@
         radial-gradient(circle at top right, rgba(198,164,106,0.08), transparent 24%),
         linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     img {
@@ -104,17 +186,28 @@
       position: relative;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       backdrop-filter: blur(18px);
       background: rgba(10,10,10,0.72);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav-inner {
-      min-height: 78px;
+      min-height: var(--nav-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -124,33 +217,22 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
       line-height: 1;
-    }
-
-    .brand img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    .brand {
-    display: flex;
-    align-items: center;
-    line-height: 1;
+      flex-shrink: 0;
     }
 
     .brand-logo-only img {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    display: block;
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
-@media (max-width: 760px) {
-  .brand-logo-only img {
-    height: 40px;
-  }
-}}
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
     .nav-links {
       display: flex;
@@ -164,22 +246,74 @@
       font-size: 14px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      transition: color 0.25s ease;
+      transition: color var(--ease), transform var(--ease);
     }
 
     .nav-links a:hover {
       color: var(--white);
+      transform: translateY(-1px);
     }
 
-    .social-link {
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,0.08);
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
       border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.09);
       background: rgba(255,255,255,0.03);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-soft);
+      transition: transform var(--ease), border-color var(--ease), background var(--ease), color var(--ease);
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px);
+      border-color: rgba(198,164,106,0.45);
+      background: rgba(198,164,106,0.08);
+      color: #f3d6a7;
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--white);
+    }
+
+    .menu-toggle svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     .hero {
-      min-height: calc(100vh - 78px);
+      min-height: calc(100vh - var(--nav-h));
       display: flex;
       align-items: center;
       padding: 70px 0 60px;
@@ -214,7 +348,7 @@
       border-radius: 999px;
       font-weight: 600;
       letter-spacing: 0.02em;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      transition: transform var(--ease), background var(--ease), border-color var(--ease), box-shadow var(--ease);
     }
 
     .btn:hover {
@@ -225,6 +359,10 @@
       background: linear-gradient(180deg, #d9b67a 0%, #b88f52 100%);
       color: #140f08;
       box-shadow: 0 10px 30px rgba(198,164,106,0.22);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 14px 34px rgba(198,164,106,0.28);
     }
 
     .btn-secondary {
@@ -249,6 +387,22 @@
       background: radial-gradient(circle, rgba(198,164,106,0.35) 0%, rgba(198,164,106,0.10) 35%, transparent 72%);
       filter: blur(36px);
       pointer-events: none;
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50% { transform: scale(1.06); opacity: 0.75; }
+    }
+
+    .float-image {
+      animation: floatMachine 6s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @keyframes floatMachine {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
     .hero-card {
@@ -298,7 +452,7 @@
       background: linear-gradient(180deg, #e4c58e 0%, #c79f61 100%);
       border: 1px solid rgba(255,255,255,0.18);
       box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      z-index: 5;
+      z-index: 10;
       font-weight: 700;
     }
 
@@ -315,6 +469,13 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 18px;
+      transition: transform var(--ease), border-color var(--ease), background var(--ease);
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(198,164,106,0.3);
+      background: rgba(255,255,255,0.05);
     }
 
     .stat strong {
@@ -329,6 +490,26 @@
     .stat span {
       color: #f1e7d8;
       font-size: 16px;
+    }
+
+    .intro-box,
+    .model,
+    .focus-card,
+    .care-card,
+    .comparison-wrap,
+    .faq-item,
+    .cta {
+      transition: transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease);
+    }
+
+    .intro-box:hover,
+    .model:hover,
+    .focus-card:hover,
+    .care-card:hover,
+    .faq-item:hover,
+    .cta:hover {
+      transform: translateY(-4px);
+      border-color: rgba(198,164,106,0.24);
     }
 
     .intro-box {
@@ -357,21 +538,34 @@
         linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
-    }
-
-    .focus-card img {
-      position: absolute;
-      right: -30px;
-      bottom: 0;
-      width: 55%;
-      max-width: 340px;
-      filter: drop-shadow(0 22px 34px rgba(0,0,0,0.50));
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: center;
     }
 
     .focus-card .copy {
-      max-width: 58%;
+      max-width: 100%;
       position: relative;
       z-index: 2;
+    }
+
+    .focus-visual {
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .focus-visual img {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      max-height: 280px;
+      object-fit: contain;
+      filter: drop-shadow(0 22px 34px rgba(0,0,0,0.50));
     }
 
     .chips {
@@ -421,6 +615,7 @@
     .model-image img {
       max-height: 210px;
       width: auto;
+      object-fit: contain;
       filter: drop-shadow(0 16px 28px rgba(0,0,0,0.52));
     }
 
@@ -459,6 +654,13 @@
       cursor: pointer;
       font-size: 14px;
       font-weight: 600;
+      transition: border-color var(--ease), background var(--ease), transform var(--ease);
+    }
+
+    .accordion-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(198,164,106,0.30);
+      background: rgba(255,255,255,0.05);
     }
 
     .accordion-panel {
@@ -472,6 +674,12 @@
 
     .accordion-panel.open {
       display: block;
+      animation: fadeSlide 320ms ease;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .comparison-wrap {
@@ -565,6 +773,11 @@
       cursor: pointer;
       font-size: 18px;
       font-weight: 600;
+      transition: color var(--ease);
+    }
+
+    .faq-question:hover {
+      color: #f1dfbf;
     }
 
     .faq-answer {
@@ -574,6 +787,7 @@
 
     .faq-answer.open {
       display: block;
+      animation: fadeSlide 320ms ease;
     }
 
     .cta {
@@ -609,18 +823,23 @@
       flex-wrap: wrap;
     }
 
-    .footer-socials a {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+    .footer-socials .social-icon {
+      width: 40px;
+      height: 40px;
     }
 
     @media (max-width: 1080px) {
       .hero-grid,
-      .focus-grid,
       .care-grid,
       .model {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-card {
         grid-template-columns: 1fr;
       }
 
@@ -628,23 +847,126 @@
         min-height: auto;
       }
 
-      .focus-card {
-        min-height: auto;
-        padding-bottom: 280px;
+      .focus-visual {
+        min-height: 240px;
       }
 
-      .focus-card .copy {
-        max-width: 100%;
-      }
-
-      .focus-card img {
-        width: 48%;
-        right: 10px;
+      .focus-visual img {
+        max-width: 280px;
+        max-height: 240px;
       }
 
       .stats {
         grid-template-columns: 1fr;
         max-width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-right .nav-links,
+      .nav-right .socials {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        pointer-events: none;
+      }
+
+      .mobile-menu-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        opacity: 0;
+        transition: opacity var(--ease);
+      }
+
+      .mobile-menu-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: min(86vw, 380px);
+        height: 100%;
+        background: rgba(15,15,15,0.97);
+        border-left: 1px solid rgba(255,255,255,0.08);
+        transform: translateX(100%);
+        transition: transform var(--ease);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        box-shadow: -20px 0 50px rgba(0,0,0,0.35);
+      }
+
+      .mobile-menu.open {
+        pointer-events: auto;
+      }
+
+      .mobile-menu.open .mobile-menu-backdrop {
+        opacity: 1;
+      }
+
+      .mobile-menu.open .mobile-menu-panel {
+        transform: translateX(0);
+      }
+
+      .mobile-menu-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .mobile-menu-top img {
+        height: 40px;
+        width: auto;
+      }
+
+      .mobile-close {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(255,255,255,0.03);
+        color: var(--white);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .mobile-close svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      .mobile-links {
+        display: grid;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .mobile-links a {
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        font-size: 16px;
+        color: #f2e9db;
+      }
+
+      .mobile-socials {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
       }
     }
 
@@ -658,13 +980,11 @@
       }
 
       .nav-inner {
-        padding: 10px 0;
-        align-items: flex-start;
-        flex-direction: column;
+        min-height: 72px;
       }
 
-      .nav-links {
-        gap: 12px;
+      .brand-logo-only img {
+        height: 40px;
       }
 
       .hero {
@@ -682,14 +1002,6 @@
         right: 10px;
       }
 
-      .focus-card {
-        padding: 24px 24px 250px;
-      }
-
-      .focus-card img {
-        width: 58%;
-      }
-
       .model {
         padding: 20px;
       }
@@ -701,13 +1013,23 @@
       .faq-question {
         font-size: 17px;
       }
+    }
 
-      .brand {
-        align-items: flex-start;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .brand img {
-        height: 36px;
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -716,28 +1038,83 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand brand-logo-only">
-          <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
+      <a href="#top" class="brand brand-logo-only" aria-label="Startseite Zorr Powermatic">
+        <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
       </a>
-      <div class="nav-links">
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#modelle">Modelle</a>
+          <a href="#vergleich">Vergleich</a>
+          <a href="#pflege">Pflege</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Kontakt</a>
+        </div>
+
+        <div class="socials">
+          <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/>
+            </svg>
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-top">
+        <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
+        <button class="mobile-close" id="mobileClose" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6l-12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-links">
         <a href="#modelle">Modelle</a>
         <a href="#vergleich">Vergleich</a>
         <a href="#pflege">Pflege</a>
         <a href="#faq">FAQ</a>
         <a href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Kontakt</a>
-        <a class="social-link" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="social-link" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+
+      <div class="mobile-socials">
+        <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+          </svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/>
+          </svg>
+        </a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <header class="hero" id="top">
     <div class="container hero-grid">
-      <div class="hero-copy">
+      <div class="hero-copy reveal">
         <span class="eyebrow">Die Originale von Zorr</span>
-        <h1>Premium-Stopfmaschinen mit Stil, Komfort und Präzision.</h1>
+        <h1>Zorr Powermatic Stopfmaschinen für Komfort, Präzision und starke Ergebnisse.</h1>
         <p class="lead">
-          Die Zorr Powermatic Serie umfasst Stopfmaschinen für unterschiedliche Ansprüche — vom kompakten Einstiegsgerät bis zur vollautomatischen Premiumlösung. Im Fokus stehen Komfort, gleichmäßige Ergebnisse und effizientes Arbeiten.
+          Die Zorr Powermatic Serie umfasst Stopfmaschinen für unterschiedliche Ansprüche — vom kompakten Einstiegsgerät bis zur vollautomatischen Premiumlösung. Im Fokus stehen die Zorr Powermatic III+ Deluxe und die Zorr Powermatic V+ Deluxe.
         </p>
 
         <div class="hero-actions">
@@ -761,362 +1138,376 @@
         </div>
       </div>
 
-      <div class="hero-stage">
+      <div class="hero-stage reveal">
         <div class="glow"></div>
         <div class="hero-card">
           <div class="hero-badge">Premium Series</div>
-          <img src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
+          <img class="float-image" src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
         </div>
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="intro-box">
-        <span class="eyebrow">Überblick</span>
-        <h2>Welche Zorr Powermatic passt zu Ihnen?</h2>
-        <p class="lead">
-          Während manuelle Modelle besonders einfach, mobil und unkompliziert sind, bieten elektrische Geräte mehr Komfort und eine schnellere Verarbeitung. Vollautomatische Maschinen übernehmen zusätzlich weitere Arbeitsschritte und eignen sich besonders für Nutzer mit hohem Stopfvolumen.
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="intro-box reveal">
+          <span class="eyebrow">Überblick</span>
+          <h2>Welche Zorr Powermatic passt zu Ihnen?</h2>
+          <p class="lead">
+            Während manuelle Modelle besonders einfach, mobil und unkompliziert sind, bieten elektrische Geräte mehr Komfort und eine schnellere Verarbeitung. Vollautomatische Maschinen übernehmen zusätzlich weitere Arbeitsschritte und eignen sich besonders für Nutzer mit hohem Stopfvolumen.
+          </p>
+        </div>
+
+        <div class="focus-grid" style="margin-top:40px;">
+          <article class="focus-card reveal">
+            <div class="copy">
+              <span class="eyebrow">Highlight</span>
+              <h3>Powermatic III+ Deluxe</h3>
+              <p>
+                Die Premiumlösung für anspruchsvolle Nutzer: automatisierte Dosierung, digitales Bedienkonzept und eine besonders gleichmäßige Befüllung.
+              </p>
+              <div class="chips">
+                <span class="chip">Automatische Tabakdosierung</span>
+                <span class="chip">Digitales Display</span>
+                <span class="chip">Premium-Komfort</span>
+              </div>
+            </div>
+            <div class="focus-visual">
+              <img class="float-image" src="images/powermatic-3-deluxe.png" alt="Zorr Powermatic III+ Deluxe" />
+            </div>
+          </article>
+
+          <article class="focus-card reveal">
+            <div class="copy">
+              <span class="eyebrow">Topmodell</span>
+              <h3>Powermatic V+ Deluxe</h3>
+              <p>
+                Vollautomatisch, effizient und maximal komfortabel: mit Bedienfeld, Hülsenmagazin, Zähler und Reinigungsfunktion.
+              </p>
+              <div class="chips">
+                <span class="chip">Vollautomatisch</span>
+                <span class="chip">Hülsenmagazin</span>
+                <span class="chip">Reinigungsfunktion</span>
+              </div>
+            </div>
+            <div class="focus-visual">
+              <img class="float-image" src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modelle">
+      <div class="container">
+        <span class="eyebrow reveal">Modelle</span>
+        <h2 class="reveal">Die Zorr Powermatic Serie</h2>
+        <p class="lead reveal">
+          Von kompakt und mobil bis hin zu Premium und Vollautomatik — hier finden Sie alle Modelle im Überblick.
         </p>
-      </div>
 
-      <div class="focus-grid" style="margin-top:40px;">
-        <article class="focus-card">
-          <div class="copy">
-            <span class="eyebrow">Highlight</span>
-            <h3>Powermatic III+ Deluxe</h3>
-            <p>
-              Die Premiumlösung für anspruchsvolle Nutzer: automatisierte Dosierung, digitales Bedienkonzept und eine besonders gleichmäßige Befüllung.
-            </p>
-            <div class="chips">
-              <span class="chip">Automatische Tabakdosierung</span>
-              <span class="chip">Digitales Display</span>
-              <span class="chip">Premium-Komfort</span>
+        <div class="models">
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-mini.png" alt="Zorr Powermatic Mini" />
             </div>
-          </div>
-          <img src="images/powermatic-3-deluxe.png" alt="Zorr Powermatic III+ Deluxe" />
-        </article>
-
-        <article class="focus-card">
-          <div class="copy">
-            <span class="eyebrow">Topmodell</span>
-            <h3>Powermatic V+ Deluxe</h3>
-            <p>
-              Vollautomatisch, effizient und maximal komfortabel: mit Bedienfeld, Hülsenmagazin, Zähler und Reinigungsfunktion.
-            </p>
-            <div class="chips">
-              <span class="chip">Vollautomatisch</span>
-              <span class="chip">Hülsenmagazin</span>
-              <span class="chip">Reinigungsfunktion</span>
-            </div>
-          </div>
-          <img src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="modelle">
-    <div class="container">
-      <span class="eyebrow">Modelle</span>
-      <h2>Die Zorr Powermatic Serie</h2>
-      <p class="lead">
-        Von kompakt und mobil bis hin zu Premium und Vollautomatik — hier finden Sie alle Modelle im Überblick.
-      </p>
-
-      <div class="models">
-
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-mini.png" alt="Zorr Powermatic Mini" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Manuell · kompakt</div>
-                <h3>Powermatic Mini</h3>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Manuell · kompakt</div>
+                  <h3>Powermatic Mini</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic Mini ist ein kompaktes und einfach zu bedienendes Stopfgerät für den gelegentlichen Einsatz. Als preisgünstiger Einstieg eignet sich dieses Modell besonders für Nutzer, die eine einfache und mobile Lösung suchen.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-mini">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-mini">
+                  <p>Durch ihre kompakte Größe ist sie ideal als Zweitgerät oder für unterwegs geeignet und benötigt keinen Stromanschluss. Die mechanische Bauweise ermöglicht eine unkomplizierte Nutzung ohne komplexe Einstellungen. Für eine dauerhaft zuverlässige Funktion empfiehlt es sich, das Gerät regelmäßig von Tabakresten zu befreien und sauber zu halten.</p>
+                </div>
               </div>
             </div>
-            <p>Die ZORR® Powermatic Mini ist ein kompaktes und einfach zu bedienendes Stopfgerät für den gelegentlichen Einsatz. Als preisgünstiger Einstieg eignet sich dieses Modell besonders für Nutzer, die eine einfache und mobile Lösung suchen.</p>
+          </article>
+
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-1-elite.png" alt="Zorr Powermatic I+ Elite" />
+            </div>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Manuell · Klassiker</div>
+                  <h3>Powermatic I+ Elite</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic I+ Elite gehört zu den bewährten Klassikern unter den manuellen Stopfmaschinen. Sie überzeugt durch eine stabile Konstruktion und eine einfache Handhabung im täglichen Gebrauch.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-i">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-i">
+                  <p>Dank der robusten Metallmechanik ist das Gerät besonders langlebig und stellt einen preislich attraktiven Anfang für Einsteiger und Gelegenheitsstopfer dar. Durch ihre wartungsarme Mechanik arbeitet das Gerät zuverlässig, wenn es regelmäßig gereinigt und frei von Tabakresten gehalten wird.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-2-plus.png" alt="Zorr Powermatic II+" />
+            </div>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Elektrisch · bewährt</div>
+                  <h3>Powermatic II+</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic II+ ist eine elektrische Stopfmaschine, die für eine komfortable und gleichmäßige Herstellung entwickelt wurde. Der elektrische Antrieb sorgt für eine konstante Stopfleistung und erleichtert die Bedienung erheblich.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-ii">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-ii">
+                  <p>Als eines der beliebtesten Modelle der Serie hat sich die Powermatic II+ bei vielen Anwendern bewährt. Damit das Gerät dauerhaft zuverlässig arbeitet, sollte der Tabak locker vorbereitet und das Gerät regelmäßig gereinigt werden. Besonders wichtig ist das Entfernen von Tabakresten aus dem Stopfkanal.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-3-deluxe.png" alt="Zorr Powermatic III+ Deluxe" />
+            </div>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Premium · elektrisch</div>
+                  <h3>Powermatic III+ Deluxe</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic III+ Deluxe ist eine elektrische Stopfmaschine mit automatisierter Funktion, die eine besonders komfortable Nutzung ermöglicht. Sie richtet sich vor allem an anspruchsvolle Nutzer, die Wert auf eine gleichmäßige und effiziente Verarbeitung legen.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-iii">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-iii">
+                  <p>Durch den automatisierten Stopfvorgang und die automatische Tabakdosierung wird eine gleichmäßige Befüllung der Hülsen erreicht. Ein digitales Display erleichtert die Bedienung und sorgt für eine übersichtliche Steuerung der Funktionen. Für eine dauerhaft stabile Leistung ist es wichtig, das Gerät regelmäßig von Tabakpartikeln zu reinigen und auf eine korrekte Tabakmenge zu achten.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-4-plus.png" alt="Zorr Powermatic IV+" />
+            </div>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Elektrisch · effizient</div>
+                  <h3>Powermatic IV+</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic IV+ bietet eine weiterentwickelte Technik für ein besonders komfortables Stopfen. Das Gerät ist auf eine effiziente Nutzung ausgelegt und eignet sich für Anwender, die regelmäßig größere Mengen herstellen möchten.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-iv">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-iv">
+                  <p>Dank der kompakten Bauweise und eines leistungsstarken Motors arbeitet die Maschine zuverlässig und sorgt für gleichmäßig gefüllte Zigaretten. Der große Tabaktrichter ermöglicht zudem ein effizienteres Arbeiten. Wie bei allen elektrischen Stopfmaschinen ist auch hier eine regelmäßige Reinigung entscheidend.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="model reveal">
+            <div class="model-image">
+              <img src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
+            </div>
+            <div>
+              <div class="model-top">
+                <div>
+                  <div class="tag">Vollautomatisch · High-End</div>
+                  <h3>Powermatic V+ Deluxe</h3>
+                </div>
+              </div>
+              <p>Die ZORR® Powermatic V+ Deluxe stellt das leistungsstärkste Modell der Powermatic-Serie dar und wurde für eine komfortable und zuverlässige Nutzung entwickelt. Als vollautomatische Stopfmaschine bietet sie ein besonders hohes Maß an Bedienkomfort.</p>
+              <div class="accordion">
+                <button class="accordion-toggle" data-target="acc-v">Mehr lesen</button>
+                <div class="accordion-panel" id="acc-v">
+                  <p>Ein integriertes Bedienfeld mit verschiedenen Dichtestufen ermöglicht eine individuelle Anpassung, während das Hülsenmagazin und der integrierte Zähler eine effiziente Nutzung unterstützen. Zusätzlich verfügt das Gerät über eine praktische Reinigungsfunktion, die die regelmäßige Wartung erleichtert.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vergleich">
+      <div class="container">
+        <span class="eyebrow reveal">Vergleich</span>
+        <h2 class="reveal">Modelle im Vergleich</h2>
+        <p class="lead reveal">Ein schneller Überblick, welche Zorr Powermatic zu welchem Nutzertyp passt.</p>
+
+        <div class="comparison-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Modell</th>
+                <th>Bedienung</th>
+                <th>Für wen geeignet</th>
+                <th>Besonderheiten</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Powermatic Mini</td>
+                <td>Manuell</td>
+                <td>Unterwegsnutzer, Zweitgerät</td>
+                <td>Kompakt, mobil, kein Strom notwendig</td>
+              </tr>
+              <tr>
+                <td>Powermatic I+ Elite</td>
+                <td>Manuell</td>
+                <td>Einsteiger, Gelegenheitsstopfer</td>
+                <td>Robuste Metallmechanik, langlebig</td>
+              </tr>
+              <tr>
+                <td>Powermatic II+</td>
+                <td>Elektrisch</td>
+                <td>Regelmäßige Nutzer</td>
+                <td>Elektrischer Komfort, schnelle Ergebnisse</td>
+              </tr>
+              <tr>
+                <td>Powermatic IV+</td>
+                <td>Elektrisch</td>
+                <td>Nutzer mit höherem Stopfvolumen</td>
+                <td>Großer Tabaktrichter, hohe Effizienz</td>
+              </tr>
+              <tr>
+                <td>Powermatic III+ Deluxe</td>
+                <td>Elektrisch</td>
+                <td>Anspruchsvolle Nutzer</td>
+                <td>Automatische Tabakdosierung, digitales Display</td>
+              </tr>
+              <tr>
+                <td>Powermatic V+ Deluxe</td>
+                <td>Vollautomatisch</td>
+                <td>Power User</td>
+                <td>Automatische Hülsen- und Tabakzufuhr, maximaler Komfort</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="reveal" style="margin-top:16px;font-size:14px;">* Bei allen elektrischen Modellen ist ein Stromkabel inkludiert.</p>
+      </div>
+    </section>
+
+    <section class="section" id="pflege">
+      <div class="container">
+        <span class="eyebrow reveal">Wartung & Pflege</span>
+        <h2 class="reveal">Für konstant starke Ergebnisse.</h2>
+        <p class="lead reveal">Regelmäßige Reinigung und sachgemäße Nutzung verlängern die Lebensdauer Ihrer Zorr Powermatic Stopfmaschine deutlich.</p>
+
+        <div class="care-grid">
+          <div class="care-card reveal">
+            <h3>Wartung und Pflege</h3>
+            <p>Damit Ihre ZORR® Powermatic Stopfmaschine dauerhaft zuverlässig arbeitet, empfiehlt sich eine regelmäßige Reinigung und sorgfältige Nutzung. Während des Stopfvorgangs können sich Tabakreste im Stopfkanal oder im Inneren des Geräts ansammeln.</p>
 
             <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-mini">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-mini">
-                <p>Durch ihre kompakte Größe ist sie ideal als Zweitgerät oder für unterwegs geeignet und benötigt keinen Stromanschluss. Die mechanische Bauweise ermöglicht eine unkomplizierte Nutzung ohne komplexe Einstellungen. Für eine dauerhaft zuverlässige Funktion empfiehlt es sich, das Gerät regelmäßig von Tabakresten zu befreien und sauber zu halten.</p>
+              <button class="accordion-toggle" data-target="care-more">Mehr lesen</button>
+              <div class="accordion-panel" id="care-more">
+                <p>Es empfiehlt sich daher, die Maschine regelmäßig mit einem kleinen Pinsel oder einer geeigneten Reinigungsbürste von Tabakresten zu befreien. Besonders der Stopfkanal sowie bewegliche Teile sollten sauber gehalten werden. Achten Sie außerdem darauf, den Tabak vor der Verwendung leicht aufzulockern und nicht zu fest einzufüllen. Zu trockener oder stark gepresster Tabak kann den Stopfvorgang erschweren.</p>
+                <p>Auch eine schonende Bedienung trägt zur Langlebigkeit des Geräts bei. Vermeiden Sie übermäßigen Druck und nutzen Sie die Maschine entsprechend der vorgesehenen Funktion. Bei elektrischen Modellen empfiehlt es sich zusätzlich, das Gerät regelmäßig vom Strom zu trennen und von Staub sowie Tabakpartikeln zu befreien.</p>
               </div>
             </div>
           </div>
-        </article>
 
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-1-elite.png" alt="Zorr Powermatic I+ Elite" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Manuell · Klassiker</div>
-                <h3>Powermatic I+ Elite</h3>
-              </div>
+          <div class="care-card reveal">
+            <h3>Tipps für lange Lebensdauer</h3>
+            <div class="tips">
+              <div class="tip"><strong>Regelmäßig reinigen:</strong> Tabakreste aus Kammer und Stopfbereich entfernen.</div>
+              <div class="tip"><strong>Reinigungswerkzeuge verwenden:</strong> Stopfkanal und Mechanik regelmäßig sauber halten.</div>
+              <div class="tip"><strong>Tabakstaub entfernen:</strong> Kleine Partikel mit Pinsel oder Druckluft beseitigen.</div>
+              <div class="tip"><strong>Nicht überfüllen:</strong> Zu viel Tabak kann Verstopfungen verursachen und die Mechanik belasten.</div>
             </div>
-            <p>Die ZORR® Powermatic I+ Elite gehört zu den bewährten Klassikern unter den manuellen Stopfmaschinen. Sie überzeugt durch eine stabile Konstruktion und eine einfache Handhabung im täglichen Gebrauch.</p>
-
-            <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-i">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-i">
-                <p>Dank der robusten Metallmechanik ist das Gerät besonders langlebig und stellt einen preislich attraktiven Anfang für Einsteiger und Gelegenheitsstopfer dar. Durch ihre wartungsarme Mechanik arbeitet das Gerät zuverlässig, wenn es regelmäßig gereinigt und frei von Tabakresten gehalten wird.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-2-plus.png" alt="Zorr Powermatic II+" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Elektrisch · bewährt</div>
-                <h3>Powermatic II+</h3>
-              </div>
-            </div>
-            <p>Die ZORR® Powermatic II+ ist eine elektrische Stopfmaschine, die für eine komfortable und gleichmäßige Herstellung entwickelt wurde. Der elektrische Antrieb sorgt für eine konstante Stopfleistung und erleichtert die Bedienung erheblich.</p>
-
-            <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-ii">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-ii">
-                <p>Als eines der beliebtesten Modelle der Serie hat sich die Powermatic II+ bei vielen Anwendern bewährt. Damit das Gerät dauerhaft zuverlässig arbeitet, sollte der Tabak locker vorbereitet und das Gerät regelmäßig gereinigt werden. Besonders wichtig ist das Entfernen von Tabakresten aus dem Stopfkanal.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-3-deluxe.png" alt="Zorr Powermatic III+ Deluxe" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Premium · elektrisch</div>
-                <h3>Powermatic III+ Deluxe</h3>
-              </div>
-            </div>
-            <p>Die ZORR® Powermatic III+ Deluxe ist eine elektrische Stopfmaschine mit automatisierter Funktion, die eine besonders komfortable Nutzung ermöglicht. Sie richtet sich vor allem an anspruchsvolle Nutzer, die Wert auf eine gleichmäßige und effiziente Verarbeitung legen.</p>
-
-            <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-iii">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-iii">
-                <p>Durch den automatisierten Stopfvorgang und die automatische Tabakdosierung wird eine gleichmäßige Befüllung der Hülsen erreicht. Ein digitales Display erleichtert die Bedienung und sorgt für eine übersichtliche Steuerung der Funktionen. Für eine dauerhaft stabile Leistung ist es wichtig, das Gerät regelmäßig von Tabakpartikeln zu reinigen und auf eine korrekte Tabakmenge zu achten.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-4-plus.png" alt="Zorr Powermatic IV+" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Elektrisch · effizient</div>
-                <h3>Powermatic IV+</h3>
-              </div>
-            </div>
-            <p>Die ZORR® Powermatic IV+ bietet eine weiterentwickelte Technik für ein besonders komfortables Stopfen. Das Gerät ist auf eine effiziente Nutzung ausgelegt und eignet sich für Anwender, die regelmäßig größere Mengen herstellen möchten.</p>
-
-            <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-iv">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-iv">
-                <p>Dank der kompakten Bauweise und eines leistungsstarken Motors arbeitet die Maschine zuverlässig und sorgt für gleichmäßig gefüllte Zigaretten. Der große Tabaktrichter ermöglicht zudem ein effizienteres Arbeiten. Wie bei allen elektrischen Stopfmaschinen ist auch hier eine regelmäßige Reinigung entscheidend.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="model">
-          <div class="model-image">
-            <img src="images/powermatic-5-deluxe.png" alt="Zorr Powermatic V+ Deluxe" />
-          </div>
-          <div>
-            <div class="model-top">
-              <div>
-                <div class="tag">Vollautomatisch · High-End</div>
-                <h3>Powermatic V+ Deluxe</h3>
-              </div>
-            </div>
-            <p>Die ZORR® Powermatic V+ Deluxe stellt das leistungsstärkste Modell der Powermatic-Serie dar und wurde für eine komfortable und zuverlässige Nutzung entwickelt. Als vollautomatische Stopfmaschine bietet sie ein besonders hohes Maß an Bedienkomfort.</p>
-
-            <div class="accordion">
-              <button class="accordion-toggle" data-target="acc-v">Mehr lesen</button>
-              <div class="accordion-panel" id="acc-v">
-                <p>Ein integriertes Bedienfeld mit verschiedenen Dichtestufen ermöglicht eine individuelle Anpassung, während das Hülsenmagazin und der integrierte Zähler eine effiziente Nutzung unterstützen. Zusätzlich verfügt das Gerät über eine praktische Reinigungsfunktion, die die regelmäßige Wartung erleichtert.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="vergleich">
-    <div class="container">
-      <span class="eyebrow">Vergleich</span>
-      <h2>Modelle im Vergleich</h2>
-      <p class="lead">Ein schneller Überblick, welche Zorr Powermatic zu welchem Nutzertyp passt.</p>
-
-      <div class="comparison-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Bedienung</th>
-              <th>Für wen geeignet</th>
-              <th>Besonderheiten</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Powermatic Mini</td>
-              <td>Manuell</td>
-              <td>Unterwegsnutzer, Zweitgerät</td>
-              <td>Kompakt, mobil, kein Strom notwendig</td>
-            </tr>
-            <tr>
-              <td>Powermatic I+ Elite</td>
-              <td>Manuell</td>
-              <td>Einsteiger, Gelegenheitsstopfer</td>
-              <td>Robuste Metallmechanik, langlebig</td>
-            </tr>
-            <tr>
-              <td>Powermatic II+</td>
-              <td>Elektrisch</td>
-              <td>Regelmäßige Nutzer</td>
-              <td>Elektrischer Komfort, schnelle Ergebnisse</td>
-            </tr>
-            <tr>
-              <td>Powermatic IV+</td>
-              <td>Elektrisch</td>
-              <td>Nutzer mit höherem Stopfvolumen</td>
-              <td>Großer Tabaktrichter, hohe Effizienz</td>
-            </tr>
-            <tr>
-              <td>Powermatic III+ Deluxe</td>
-              <td>Elektrisch</td>
-              <td>Anspruchsvolle Nutzer</td>
-              <td>Automatische Tabakdosierung, digitales Display</td>
-            </tr>
-            <tr>
-              <td>Powermatic V+ Deluxe</td>
-              <td>Vollautomatisch</td>
-              <td>Power User</td>
-              <td>Automatische Hülsen- und Tabakzufuhr, maximaler Komfort</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="margin-top:16px;font-size:14px;">* Bei allen elektrischen Modellen ist ein Stromkabel inkludiert.</p>
-    </div>
-  </section>
-
-  <section class="section" id="pflege">
-    <div class="container">
-      <span class="eyebrow">Wartung & Pflege</span>
-      <h2>Für konstant starke Ergebnisse.</h2>
-      <p class="lead">Regelmäßige Reinigung und sachgemäße Nutzung verlängern die Lebensdauer Ihrer Zorr Powermatic Stopfmaschine deutlich.</p>
-
-      <div class="care-grid">
-        <div class="care-card">
-          <h3>Wartung und Pflege</h3>
-          <p>Damit Ihre ZORR® Powermatic Stopfmaschine dauerhaft zuverlässig arbeitet, empfiehlt sich eine regelmäßige Reinigung und sorgfältige Nutzung. Während des Stopfvorgangs können sich Tabakreste im Stopfkanal oder im Inneren des Geräts ansammeln.</p>
-
-          <div class="accordion">
-            <button class="accordion-toggle" data-target="care-more">Mehr lesen</button>
-            <div class="accordion-panel" id="care-more">
-              <p>Es empfiehlt sich daher, die Maschine regelmäßig mit einem kleinen Pinsel oder einer geeigneten Reinigungsbürste von Tabakresten zu befreien. Besonders der Stopfkanal sowie bewegliche Teile sollten sauber gehalten werden. Achten Sie außerdem darauf, den Tabak vor der Verwendung leicht aufzulockern und nicht zu fest einzufüllen. Zu trockener oder stark gepresster Tabak kann den Stopfvorgang erschweren.</p>
-              <p>Auch eine schonende Bedienung trägt zur Langlebigkeit des Geräts bei. Vermeiden Sie übermäßigen Druck und nutzen Sie die Maschine entsprechend der vorgesehenen Funktion. Bei elektrischen Modellen empfiehlt es sich zusätzlich, das Gerät regelmäßig vom Strom zu trennen und von Staub sowie Tabakpartikeln zu befreien.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="care-card">
-          <h3>Tipps für lange Lebensdauer</h3>
-          <div class="tips">
-            <div class="tip"><strong>Regelmäßig reinigen:</strong> Tabakreste aus Kammer und Stopfbereich entfernen.</div>
-            <div class="tip"><strong>Reinigungswerkzeuge verwenden:</strong> Stopfkanal und Mechanik regelmäßig sauber halten.</div>
-            <div class="tip"><strong>Tabakstaub entfernen:</strong> Kleine Partikel mit Pinsel oder Druckluft beseitigen.</div>
-            <div class="tip"><strong>Nicht überfüllen:</strong> Zu viel Tabak kann Verstopfungen verursachen und die Mechanik belasten.</div>
-          </div>
-          <p style="margin-top:18px;font-size:14px;">* Gerät nur im ausgeschalteten Zustand reinigen. Elektrische Geräte vor der Reinigung immer ausschalten und nicht in den Stopfbereich greifen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="container">
-      <span class="eyebrow">FAQ</span>
-      <h2>Häufige Fragen</h2>
-
-      <div class="faq">
-        <div class="faq-item">
-          <button class="faq-question" data-target="faq-1">Welche Powermatic ist für Einsteiger geeignet?</button>
-          <div class="faq-answer" id="faq-1">
-            <p>Für Einsteiger eignen sich vor allem die Powermatic Mini und die Powermatic I+ Elite. Wer bereits mehr Komfort möchte, findet in der Powermatic II+ einen starken elektrischen Einstieg.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" data-target="faq-2">Welche Modelle bieten den höchsten Komfort?</button>
-          <div class="faq-answer" id="faq-2">
-            <p>Besonders komfortabel sind die Powermatic III+ Deluxe und die Powermatic V+ Deluxe. Die V+ Deluxe ist das Topmodell mit vollautomatischer Funktion und maximalem Bedienkomfort.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" data-target="faq-3">Warum ist Reinigung so wichtig?</button>
-          <div class="faq-answer" id="faq-3">
-            <p>Tabakreste im Stopfkanal oder im Gerät können die Funktion beeinträchtigen und zu ungleichmäßigen Ergebnissen führen. Regelmäßige Reinigung hilft, die Leistung konstant zu halten und Verschleiß zu reduzieren.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" data-target="faq-4">Was ist der Unterschied zwischen III+ Deluxe und V+ Deluxe?</button>
-          <div class="faq-answer" id="faq-4">
-            <p>Die Powermatic III+ Deluxe ist eine elektrische Premiumlösung mit automatisierter Dosierung und digitalem Bedienkonzept. Die Powermatic V+ Deluxe geht noch weiter und bietet als vollautomatisches Topmodell zusätzlichen Komfort mit Hülsenmagazin, Zähler und Reinigungsfunktion.</p>
+            <p style="margin-top:18px;font-size:14px;">* Gerät nur im ausgeschalteten Zustand reinigen. Elektrische Geräte vor der Reinigung immer ausschalten und nicht in den Stopfbereich greifen.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="cta">
-        <span class="eyebrow">Kontakt</span>
-        <h2>Fragen zu Zorr Powermatic?</h2>
-        <p class="lead" style="margin:0 auto 24px;">Für Informationen zu den Modellen oder zur passenden Maschine für Ihren Bedarf.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn btn-primary" href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Jetzt Kontakt aufnehmen</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a class="btn btn-secondary" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow reveal">FAQ</span>
+        <h2 class="reveal">Häufige Fragen</h2>
+
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-question" data-target="faq-1">Welche Powermatic ist für Einsteiger geeignet?</button>
+            <div class="faq-answer" id="faq-1">
+              <p>Für Einsteiger eignen sich vor allem die Powermatic Mini und die Powermatic I+ Elite. Wer bereits mehr Komfort möchte, findet in der Powermatic II+ einen starken elektrischen Einstieg.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" data-target="faq-2">Welche Modelle bieten den höchsten Komfort?</button>
+            <div class="faq-answer" id="faq-2">
+              <p>Besonders komfortabel sind die Powermatic III+ Deluxe und die Powermatic V+ Deluxe. Die V+ Deluxe ist das Topmodell mit vollautomatischer Funktion und maximalem Bedienkomfort.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" data-target="faq-3">Warum ist Reinigung so wichtig?</button>
+            <div class="faq-answer" id="faq-3">
+              <p>Tabakreste im Stopfkanal oder im Gerät können die Funktion beeinträchtigen und zu ungleichmäßigen Ergebnissen führen. Regelmäßige Reinigung hilft, die Leistung konstant zu halten und Verschleiß zu reduzieren.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" data-target="faq-4">Was ist der Unterschied zwischen III+ Deluxe und V+ Deluxe?</button>
+            <div class="faq-answer" id="faq-4">
+              <p>Die Powermatic III+ Deluxe ist eine elektrische Premiumlösung mit automatisierter Dosierung und digitalem Bedienkonzept. Die Powermatic V+ Deluxe geht noch weiter und bietet als vollautomatisches Topmodell zusätzlichen Komfort mit Hülsenmagazin, Zähler und Reinigungsfunktion.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Fragen zu Zorr Powermatic?</h2>
+          <p class="lead" style="margin:0 auto 24px;">Für Informationen zu den Modellen oder zur passenden Maschine für Ihren Bedarf.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:office@kp-plattener.at?subject=Zorr%20Powermatic">Jetzt Kontakt aufnehmen</a>
+            <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+              </svg>
+            </a>
+            <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-line">
         <div>© Zorr Powermatic</div>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -1133,6 +1524,49 @@
           button.textContent = panel.classList.contains('open') ? 'Weniger anzeigen' : 'Mehr lesen';
         }
       });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach((el) => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', openMenu);
+    if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
   </script>
 </body>
