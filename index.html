@@ -133,25 +133,24 @@
       width: auto;
       object-fit: contain;
     }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
+    .brand {
+    display: flex;
+    align-items: center;
+    line-height: 1;
     }
 
-    .brand-text strong {
-      font-size: 28px;
-      letter-spacing: -0.04em;
-      color: var(--white);
+    .brand-logo-only img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
     }
 
-    .brand-text span {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      margin-top: 6px;
-    }
+@media (max-width: 760px) {
+  .brand-logo-only img {
+    height: 40px;
+  }
+}}
 
     .nav-links {
       display: flex;
