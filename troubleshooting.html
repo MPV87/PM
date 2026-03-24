@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Troubleshooting | Zorr Powermatic Hilfe & Problemlösung</title>
+<meta name="description" content="Hilfe bei JAM-, HOPPER- und Zuführungsproblemen Ihrer Zorr Powermatic Stopfmaschine. Tipps zur Tabakvorbereitung, Pflege, Diagnose und technischem Service.">
+<link rel="canonical" href="https://zorr-powermatic.com/troubleshooting.html">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<style>
+:root{
+--bg:#0b0b0b;
+--text:#f6f3ee;
+--muted:#b8afa4;
+--gold:#c7a56a;
+--gold-soft:#e1c48e;
+--panel:#131313;
+--panel-2:#171717;
+--line:rgba(255,255,255,.08);
+--shadow:0 12px 36px rgba(0,0,0,.45);
+--ease:260ms ease;
+--max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:"Inter",Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto;}
+.section{padding:96px 0;}
+h1,h2,h3,h4{
+margin:0 0 18px;
+line-height:1.1;
+letter-spacing:-.02em;
+}
+h1{font-size:clamp(40px,6vw,76px);}
+h2{font-size:clamp(28px,4vw,52px);}
+h3{font-size:26px;color:var(--gold-soft);}
+h4{font-size:19px;color:#f0e5d4;}
+p{margin:0 0 16px;color:var(--muted);font-size:17px;}
+.lead{font-size:19px;color:#ddd3c6;max-width:760px;}
+.small{font-size:14px;color:#cabca8;}
+.tag{
+display:inline-flex;
+padding:8px 14px;
+border-radius:999px;
+font-size:12px;
+letter-spacing:.1em;
+text-transform:uppercase;
+color:var(--gold-soft);
+border:1px solid rgba(225,196,142,.22);
+background:rgba(225,196,142,.06);
+margin-bottom:16px;
+}
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:999px;
+padding:14px 28px;
+font-weight:600;
+transition:var(--ease);
+}
+.btn-primary{
+background:linear-gradient(180deg,#d9b67a 0%,#b88f52 100%);
+color:#17120c;
+box-shadow:0 8px 24px rgba(199,165,106,.22);
+}
+.btn-primary:hover{transform:translateY(-1px);}
+.btn-secondary{
+border:1px solid var(--gold-soft);
+color:var(--gold-soft);
+background:transparent;
+}
+.btn-secondary:hover{background:#1a1a1a;}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.chip{
+font-size:13px;
+padding:7px 14px;
+border-radius:999px;
+background:#1b1b1b;
+color:#efe5d7;
+border:1px solid rgba(255,255,255,.08);
+}
+
+/* NAV */
+.nav{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(12,12,12,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);
+}
+.nav-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding:16px 0;
+}
+.brand img{height:48px;}
+.nav-links{
+display:flex;
+align-items:center;
+gap:22px;
+flex-wrap:wrap;
+}
+.nav-links a{
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:#eae3d5;
+transition:color .2s ease;
+}
+.nav-links a:hover{color:var(--gold-soft);}
+
+/* HERO */
+.hero{
+padding:110px 0 90px;
+background:
+radial-gradient(circle at 85% 20%, rgba(199,165,106,.16), transparent 24%),
+linear-gradient(180deg, #111 0%, #0b0b0b 65%);
+border-bottom:1px solid var(--line);
+}
+.hero-grid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:48px;
+align-items:center;
+}
+.hero h1{
+background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.hero-card{
+padding:28px;
+border-radius:24px;
+background:linear-gradient(180deg,#151515 0%, #101010 100%);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+.hero-card ul{
+margin:0;
+padding-left:18px;
+color:#ddd3c6;
+}
+.hero-card li{margin:0 0 12px;}
+
+/* CARDS */
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+.card{
+padding:28px;
+border-radius:24px;
+background:var(--panel);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+.card.alt{background:var(--panel-2);}
+.card p:last-child{margin-bottom:0;}
+
+/* STEPS */
+.steps{
+display:grid;
+gap:18px;
+margin-top:34px;
+}
+.step{
+display:grid;
+grid-template-columns:64px 1fr;
+gap:18px;
+align-items:flex-start;
+padding:24px;
+border-radius:22px;
+background:var(--panel);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+.step-no{
+width:64px;
+height:64px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:20px;
+color:#16120d;
+background:linear-gradient(180deg,#e1c48e 0%,#b88f52 100%);
+}
+.step-content h4{margin-bottom:10px;}
+
+/* FAQ / troubleshooting items */
+.faq{
+display:grid;
+gap:18px;
+margin-top:34px;
+}
+.faq-item{
+padding:26px;
+border-radius:22px;
+background:var(--panel);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+.faq-item h3{
+font-size:24px;
+margin-bottom:14px;
+}
+.faq-item ul{
+margin:8px 0 0;
+padding-left:18px;
+color:var(--muted);
+}
+.faq-item li{margin-bottom:10px;}
+.note{
+margin-top:14px;
+padding:14px 16px;
+border-left:3px solid var(--gold);
+background:rgba(199,165,106,.08);
+border-radius:12px;
+color:#ddd3c6;
+}
+
+/* CTA */
+.cta{
+padding:34px;
+border-radius:28px;
+background:linear-gradient(180deg,#171717 0%,#111 100%);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+}
+.cta p{max-width:760px;margin-bottom:0;}
+
+/* FOOTER */
+footer{
+background:#0b0b0b;
+border-top:1px solid var(--line);
+padding:46px 0;
+font-size:14px;
+color:var(--muted);
+}
+.footer-line{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:16px;
+}
+.footer-line a{color:var(--gold-soft);}
+.footer-line a:hover{text-decoration:underline;}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+.hero-grid,.grid-2{grid-template-columns:1fr;}
+.nav-inner{flex-direction:column;}
+}
+@media(max-width:680px){
+.section{padding:72px 0;}
+.hero{padding:86px 0 70px;}
+.step{grid-template-columns:1fr; text-align:left;}
+.step-no{width:54px;height:54px;font-size:18px;}
+}
+</style>
+</head>
+<body id="top">
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#modelle">Modelle</a>
+      <a href="index.html#vergleich">Vergleich</a>
+      <a href="index.html#pflege">Pflege</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+      <a href="mailto:office@kp-plattner.at?subject=Support%20Zorr%20Powermatic">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="tag">Hilfe & Problemlösung</div>
+      <h1>Zorr Powermatic Troubleshooting</h1>
+      <p class="lead">
+        Wenn Ihre Zorr Powermatic Stopfmaschine nicht mehr sauber arbeitet, Fehlermeldungen zeigt
+        oder die Zuführung unzuverlässig reagiert, lässt sich die Ursache oft schnell eingrenzen.
+        Viele Probleme hängen nicht mit einem Defekt zusammen, sondern mit Tabakzustand, Reinigung
+        oder der Vorbereitung vor dem Stopfvorgang.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;">
+        <a class="btn btn-primary" href="#schnellcheck">Schnellcheck starten</a>
+        <a class="btn btn-secondary" href="#service">Service & Garantie</a>
+      </div>
+      <div class="chips">
+        <span class="chip">JAM prüfen</span>
+        <span class="chip">HOPPER verstehen</span>
+        <span class="chip">Hülsenzufuhr kontrollieren</span>
+        <span class="chip">Tabak richtig vorbereiten</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Wichtig vor jeder Diagnose</h3>
+      <ul>
+        <li>Bedienungsschritte nochmals in Ruhe kontrollieren.</li>
+        <li>Nur geeigneten Volumentabak verwenden.</li>
+        <li>Feuchtigkeit möglichst im Bereich von 8–11 % halten.</li>
+        <li>Lange Fasern, Stränge oder harte Bestandteile entfernen.</li>
+        <li>Tabak bei Bedarf auf ca. 10–15 mm kürzen.</li>
+      </ul>
+      <p class="small" style="margin-top:14px;">
+        Gerade bei elektrischen und vollautomatischen Modellen ist die Tabakvorbereitung ein entscheidender Faktor
+        für gleichmäßige Ergebnisse und einen störungsfreien Ablauf.
+      </p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section" id="schnellcheck">
+    <div class="container">
+      <h2>Schnellcheck vor dem Einsenden</h2>
+      <p class="lead">
+        Bevor Sie Ihre Zorr Powermatic zum Service schicken, lohnt sich ein kurzer Basischeck.
+        In vielen Fällen ist die Ursache schnell gefunden und direkt behebbar.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-no">1</div>
+          <div class="step-content">
+            <h4>Bedienung und Reinigung kontrollieren</h4>
+            <p>
+              Prüfen Sie zuerst, ob alle Arbeitsschritte wie in der Anleitung vorgesehen durchgeführt wurden.
+              Entfernen Sie Tabakreste aus dem Füllbereich, aus der Öffnung für die Hülse und aus allen zugänglichen
+              Bereichen rund um den Stopfkanal. Rückstände können Sensorik und Mechanik beeinflussen.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">2</div>
+          <div class="step-content">
+            <h4>Tabak auf Eignung prüfen</h4>
+            <p>
+              Für einen stabilen Betrieb sollte ausschließlich Volumentabak verwendet werden.
+              Zu feuchter, zu langer oder stark verklumpter Tabak kann den Materialfluss stören
+              und zu Warnmeldungen oder ungleichmäßig gefüllten Hülsen führen.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">3</div>
+          <div class="step-content">
+            <h4>Feuchtigkeitswert messen statt schätzen</h4>
+            <p>
+              Nach Gefühl lässt sich der richtige Zustand nur schwer beurteilen. Bewährt hat sich ein Bereich
+              von etwa 8–11 % Feuchtigkeit. Liegt der Wert darüber, wird der Tabak oft zu schwer beweglich,
+              klebt stärker zusammen und sinkt schlechter nach.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">4</div>
+          <div class="step-content">
+            <h4>Schnittlänge anpassen</h4>
+            <p>
+              Sehr lange Fasern oder feste Stränge sollten entfernt beziehungsweise gekürzt werden.
+              Als Richtwert ist eine Länge von etwa 10–15 mm sinnvoll. So lässt sich der Tabak gleichmäßiger
+              transportieren und besser verdichten.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Warum die Tabakvorbereitung so wichtig ist</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Zu feuchter Tabak</h3>
+          <p>
+            Ist der Tabak zu feucht, haftet er stärker aneinander und fällt im Behälter schlechter nach.
+            Dadurch kann die Maschine beim Verdichten zu wenig oder ungleichmäßigen Widerstand erfassen.
+            Das wirkt sich direkt auf den Füllvorgang aus.
+          </p>
+          <div class="note">
+            Trockener vorbereiteter Tabak unterstützt einen gleichmäßigeren Ablauf und kann die Ausbeute pro Packung verbessern.
+          </div>
+        </div>
+
+        <div class="card alt">
+          <h3>Zu lange Schnittlängen</h3>
+          <p>
+            Längere Fasern verhaken sich leichter miteinander. Dadurch bleibt zu viel Material oben im Behälter,
+            während unten zu wenig sauber nachrutscht. Das kann Warnmeldungen auslösen oder zu unvollständig
+            gefüllten Hülsen führen.
+          </p>
+          <div class="note">
+            Kürzerer, lockerer Tabak läuft meist sauberer durch die Maschine und reduziert Störungen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="jam">
+    <div class="container">
+      <h2>Fehlermeldung JAM</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Wenn JAM wiederholt erscheint</h3>
+          <p>
+            Zeigt Ihre Stopfmaschine dauerhaft eine JAM-Meldung, obwohl sichtbare Tabakreste bereits entfernt wurden,
+            sollte der Bereich rund um Tabakhalter, Füllstab-Unterseite und Hülsenaufnahme nochmals gründlich geprüft werden.
+            Bleibt die Meldung trotzdem bestehen, ist eine technische Überprüfung sinnvoll.
+          </p>
+          <ul>
+            <li>Tabakreste an der Hülseaufnahme und am Füllbereich vollständig entfernen</li>
+            <li>Gerät stromlos machen, bevor gereinigt oder kontrolliert wird</li>
+            <li>Keine harten Metallwerkzeuge im Innenbereich verwenden</li>
+            <li>Bleibt JAM weiterhin aktiv, technische Diagnose einleiten</li>
+          </ul>
+          <div class="note">
+            Wenn die Meldung nach Reinigung und korrekter Tabakvorbereitung nicht verschwindet,
+            ist der technische Service der richtige nächste Schritt.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hopper">
+    <div class="container">
+      <h2>Fehlermeldung HOPPER</h2>
+      <p class="lead">
+        Die HOPPER-Anzeige ist in der Regel kein Zufall, sondern eine Schutzreaktion der Maschine.
+        Vor dem eigentlichen Füllvorgang prüft das System, ob beim Verdichten des Tabaks der erwartete Widerstand erreicht wird.
+        Passt dieser Wert nicht, stoppt die Maschine vorsorglich.
+      </p>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Was HOPPER in der Praxis bedeutet</h3>
+          <p>
+            Die Maschine erkennt, dass in der Ladekammer nicht die Bedingungen vorliegen, die für ein sauberes
+            und gleichmäßiges Ergebnis nötig sind. So werden unvollständig oder unregelmäßig gefüllte Hülsen vermieden.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Häufigste Ursache: Tabak rutscht nicht richtig nach</h3>
+          <p>
+            Meist liegt das Problem nicht an der Elektronik, sondern am Materialfluss. Selbst wenn der Behälter voll wirkt,
+            kann der Tabak durch zu hohe Feuchtigkeit, zu große Schnittlänge oder ungünstige Struktur zu langsam absinken.
+            Dann ist in der Kammer im entscheidenden Moment zu wenig verwertbares Material vorhanden.
+          </p>
+          <ul>
+            <li>Feuchtigkeit prüfen und möglichst auf 8–11 % bringen</li>
+            <li>Zu lange Fasern entfernen oder kürzen</li>
+            <li>Verklumpungen lockern</li>
+            <li>Tabak nicht nur oben einfüllen, sondern gleichmäßig vorbereiten</li>
+          </ul>
+        </div>
+
+        <div class="faq-item">
+          <h3>Weitere Ursache: Zu wenig Tabak im Behälter</h3>
+          <p>
+            Ist der Vorrat fast aufgebraucht, kann die Maschine die nächste Hülse nicht mehr mit der nötigen
+            Materialmenge versorgen. Auch das kann eine HOPPER-Meldung auslösen.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Lösung bei wiederkehrender HOPPER-Meldung</h3>
+          <p>
+            In den meisten Fällen hilft es, den Tabak gezielt vorzubereiten: Feuchtigkeitswert prüfen,
+            Material trockener einstellen und lange Stücke auf etwa 10–15 mm kürzen. Dadurch verbessert sich
+            nicht nur der Durchlauf, sondern oft auch die Gleichmäßigkeit und das Stopfergebnis insgesamt.
+          </p>
+          <div class="note">
+            Ein gut vorbereiteter Tabak reduziert Störungen deutlich und verhindert, dass Hülsen an der Füllöffnung hängen bleiben.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="zufuhr">
+    <div class="container">
+      <h2>Automatische Hülsenzufuhr funktioniert nicht</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Wenn sich die Zuführung nicht bewegt</h3>
+          <p>
+            Bei der Powermatic 5 bzw. V+ kann es vorkommen, dass die Hülsenzufuhr nicht weiterarbeitet,
+            obwohl das Gerät grundsätzlich noch reagiert. Oft erscheint dabei gleichzeitig die Meldung HOPPER.
+            Entscheidend ist dann nicht die Anzeige selbst, sondern warum sie ausgelöst wurde.
+          </p>
+          <p>
+            Wird beim ersten Verdichtungsschritt zu wenig Widerstand festgestellt, unterbricht die Maschine den Ablauf
+            vorsorglich. In dieser Situation wird auch keine neue Hülse nachgeführt.
+          </p>
+        </div>
+
+        <div class="card alt">
+          <h3>Zusätzlicher Prüfpunkt: Magazin-Klappe</h3>
+          <p>
+            Eine weitere mögliche Ursache ist eine nicht vollständig geschlossene Klappe am Hülsenmagazin.
+            Erkennt der Sensor keinen korrekt geschlossenen Zustand, bleibt die automatische Zufuhr deaktiviert.
+          </p>
+          <ul>
+            <li>Prüfen, ob die Klappe sauber anliegt</li>
+            <li>Kontrollieren, ob sie vollständig gegen das Gehäuse schließt</li>
+            <li>Verschmutzungen oder verklemmte Bereiche entfernen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="service">
+    <div class="container">
+      <h2>Technischer Service & Garantie</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Wenn das Problem bestehen bleibt</h3>
+          <p>
+            Sollte Ihre Zorr Powermatic trotz korrekter Anwendung, Reinigung und passender Tabakvorbereitung
+            weiterhin nicht zuverlässig funktionieren, kann eine fachkundige Prüfung sinnvoll sein.
+          </p>
+          <p>
+            Dafür steht ein technischer Service zur Verfügung, der Fehlerbilder bewertet, Ursachen eingrenzt
+            und Reparaturen durchführen kann. Durch Erfahrung und Zugriff auf passende Originalteile lassen sich
+            viele Probleme nachhaltig beheben.
+          </p>
+        </div>
+
+        <div class="card alt">
+          <h3>Warum Reparatur oft die beste Lösung ist</h3>
+          <p>
+            Eine professionelle Instandsetzung ist in vielen Fällen die sinnvollste und nachhaltigste Variante.
+            So bleibt das Gerät langfristig einsatzbereit, anstatt vorschnell ersetzt zu werden.
+          </p>
+          <p>
+            Bitte prüfen Sie vor dem Einsenden auch die Garantiebedingungen und halten Sie die relevanten
+            Gerätedaten für die Anmeldung bereit.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta" style="margin-top:34px;">
+        <div>
+          <h3 style="margin-bottom:10px;">Support anfragen</h3>
+          <p>
+            Wenn Sie nach dem Schnellcheck weiterhin Unterstützung brauchen, kontaktieren Sie uns mit einer kurzen
+            Fehlerbeschreibung. So kann der nächste Schritt schneller eingeordnet werden.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="mailto:office@kp-plattner.at?subject=Supportanfrage%20Zorr%20Powermatic">Support kontaktieren</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-line">
+    <div>© Zorr Powermatic / KP Plattner GmbH</div>
+    <div>
+      <a href="index.html">Startseite</a> |
+      <a href="impressum.html">Impressum</a> |
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
