@@ -1,1 +1,555 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zorr Powermatic Retoure</title>
+  <style>
+    :root {
+      --bg: #f5f5f3;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #d9d9d6;
+      --accent: #1f2933;
+      --accent-hover: #374151;
+      --soft: #f7f7f5;
+      --error: #b91c1c;
+      --success: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 260px);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    .logo-wrap {
+      max-width: 752px;
+      margin: 0 auto 28px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 14px 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 22px;
+    }
+
+    .form-card {
+      max-width: 752px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+    }
+
+    .section {
+      padding: 30px 38px;
+      border-top: 1px solid #ececea;
+    }
+
+    .section:first-child {
+      border-top: 0;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 23px;
+      letter-spacing: -0.01em;
+    }
+
+    .intro {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-top: 18px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label,
+    .label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .required {
+      color: #d93025;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid rgba(31, 41, 51, 0.16);
+      border-color: var(--accent);
+    }
+
+    .sub-label {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .radio-item,
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-weight: 400;
+    }
+
+    .radio-item input,
+    .checkbox-item input {
+      width: auto;
+      min-height: auto;
+      margin-top: 5px;
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .notice {
+      padding: 16px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .actions {
+      padding: 26px 38px 34px;
+    }
+
+    button {
+      min-width: 180px;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 22px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--accent-hover);
+    }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .status {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .status.success {
+      display: block;
+      color: var(--success);
+      background: rgba(15, 118, 110, 0.1);
+    }
+
+    .status.error {
+      display: block;
+      color: var(--error);
+      background: rgba(185, 28, 28, 0.1);
+    }
+
+    .hidden-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .section,
+      .actions {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="logo-wrap">
+      <div class="logo-mark">Zorr Powermatic Service</div>
+    </div>
+
+    <form id="returnForm" class="form-card" enctype="multipart/form-data">
+      <section class="section">
+        <h1>Zorr Powermatic Retoure</h1>
+        <p class="intro">Bitte füllen Sie das Formular vollständig aus. Die Angaben helfen uns bei der schnellen Bearbeitung Ihrer Reparatur oder Retoure.</p>
+      </section>
+
+      <section class="section">
+        <h2>Kundeninformation</h2>
+
+        <div class="grid">
+          <div class="field">
+            <label for="customerNumber">Kundennummer</label>
+            <input id="customerNumber" name="customerNumber" type="text" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="company">Firma</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label for="firstName">Vorname <span class="required">*</span></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Nachname <span class="required">*</span></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
+          </div>
+
+          <div class="field full">
+            <label for="street">Straße und Hausnummer <span class="required">*</span></label>
+            <input id="street" name="street" type="text" autocomplete="address-line1" required />
+          </div>
+
+          <div class="field">
+            <label for="postalCode">PLZ <span class="required">*</span></label>
+            <input id="postalCode" name="postalCode" type="text" autocomplete="postal-code" required />
+          </div>
+
+          <div class="field">
+            <label for="city">Stadt <span class="required">*</span></label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" required />
+          </div>
+
+          <div class="field">
+            <label for="country">Land <span class="required">*</span></label>
+            <select id="country" name="country" autocomplete="country-name" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Österreich">Österreich</option>
+              <option value="Deutschland">Deutschland</option>
+              <option value="Schweiz">Schweiz</option>
+              <option value="Italien">Italien</option>
+              <option value="Andere">Andere</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="phone">Telefonnummer <span class="required">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            <span class="sub-label">inkl. Landesvorwahl, z. B. +43 ...</span>
+          </div>
+
+          <div class="field full">
+            <label for="email">E-Mail <span class="required">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <span class="sub-label">beispiel@beispiel.de</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Informationen zur Maschine</h2>
+
+        <div class="field">
+          <span class="label">Um welche Maschine handelt es sich? <span class="required">*</span></span>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic I+ Elite" required /> Zorr Powermatic I+ Elite</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic II+" /> Zorr Powermatic II+</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic III+" /> Zorr Powermatic III+</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic III+ Deluxe" /> Zorr Powermatic III+ Deluxe</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic IV+" /> Zorr Powermatic IV+</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic V+" /> Zorr Powermatic V+</label>
+            <label class="radio-item"><input type="radio" name="machine" value="Zorr Powermatic V+ Deluxe" /> Zorr Powermatic V+ Deluxe</label>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="serialNumber">Seriennummer <span class="required">*</span></label>
+            <input id="serialNumber" name="serialNumber" type="text" required />
+            <span class="sub-label">auf der Unterseite der Maschine</span>
+          </div>
+
+          <div class="field">
+            <label for="purchaseDate">Kaufdatum</label>
+            <input id="purchaseDate" name="purchaseDate" type="date" />
+          </div>
+
+          <div class="field full">
+            <label for="purchaseDocument">Kaufbeleg / Garantieschein</label>
+            <input id="purchaseDocument" name="purchaseDocument" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+            <p class="hint">Erlaubt: PDF, JPG, PNG. Maximal 5 MB.</p>
+          </div>
+
+          <div class="field full">
+            <label for="problemDescription">Beschreiben Sie das Problem ausführlich. <span class="required">*</span></label>
+            <textarea id="problemDescription" name="problemDescription" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="previousRepair">Wurde die Maschine in der Vergangenheit zur Reparatur eingeschickt? <span class="required">*</span></label>
+            <select id="previousRepair" name="previousRepair" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Ja">Ja</option>
+              <option value="Nein">Nein</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="previousRepairDate">Wenn ja, wann?</label>
+            <input id="previousRepairDate" name="previousRepairDate" type="date" />
+          </div>
+
+          <div class="field full">
+            <label for="repairDocument">Reparaturbeleg</label>
+            <input id="repairDocument" name="repairDocument" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+            <p class="hint">Erlaubt: PDF, JPG, PNG. Maximal 5 MB.</p>
+          </div>
+
+          <div class="field full">
+            <label for="sameProblem">Handelt es sich um dasselbe Problem? <span class="required">*</span></label>
+            <select id="sameProblem" name="sameProblem" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Ja">Ja</option>
+              <option value="Nein">Nein</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Abwicklung der Reparatur</h2>
+
+        <div class="grid">
+          <div class="field full">
+            <label for="repairApprovalAmount">Bis zu welchem Betrag können Reparaturen ohne erneute Freigabe durchgeführt werden? <span class="required">*</span></label>
+            <input id="repairApprovalAmount" name="repairApprovalAmount" type="text" placeholder="z. B. 100 €" required />
+            <span class="sub-label">außerhalb der Garantie</span>
+          </div>
+
+          <div class="field full">
+            <label for="ifExceeded">Bei Überschreitung dieses Betrags bitte ich um: <span class="required">*</span></label>
+            <select id="ifExceeded" name="ifExceeded" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Erstellung eines Kostenvoranschlags">Erstellung eines Kostenvoranschlags</option>
+              <option value="Rücksendung des nicht reparierten Produkts">Rücksendung des nicht reparierten Produkts</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="serviceFeeConsent">Bearbeitungs- und Überprüfungspauschale <span class="required">*</span></label>
+          <div class="notice">
+            Ich bin damit einverstanden, dass für jede eingesendete Maschine, bei der kein Garantie- oder Gewährleistungsfall vorliegt, eine Bearbeitungs- und Überprüfungspauschale in Höhe von 47,60 € berechnet wird. Die Pauschale wird insbesondere dann erhoben, wenn kein technischer Mangel festgestellt werden kann oder der Defekt auf unsachgemäße Nutzung, fehlende Wartung oder unterlassene Reinigung zurückzuführen ist. Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer, zuzüglich Versandkosten. Ich bestätige, dass ich die Maschine vor dem Versand gemäß Bedienungsanleitung gereinigt und die Punkte der Checkliste geprüft habe. Sollte sich herausstellen, dass die Maschine nicht gereinigt wurde und dadurch ein erhöhter Prüf- oder Reinigungsaufwand entsteht, erkläre ich mich mit der Berechnung der entsprechenden Kosten einverstanden.
+          </div>
+          <select id="serviceFeeConsent" name="serviceFeeConsent" required>
+            <option value="">Bitte auswählen</option>
+            <option value="Ja">Ja</option>
+            <option value="Nein (Reparatur nicht möglich)">Nein (Reparatur nicht möglich)</option>
+          </select>
+        </div>
+
+        <div class="checkbox-group field">
+          <label class="checkbox-item">
+            <input type="checkbox" name="sealConsent" value="Ja" required />
+            <span>Ich bin damit einverstanden, dass bei einem Siegelbruch oder einem Eingriff durch nicht autorisierte Dritte die vollständigen Reparatur- und Servicekosten anfallen, auch wenn sich die Maschine noch innerhalb des Gewährleistungszeitraums befindet. <span class="required">*</span></span>
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" name="privacyConsent" value="Ja" required />
+            <span>Ich habe die <a href="https://www.kp-plattner.at/kp-plattner/shop/info/datenschutz" target="_blank" rel="noopener">Informationen zum Datenschutz</a> gelesen und bin damit einverstanden. Mir ist bekannt, dass ich der Verwendung meiner Daten jederzeit widersprechen kann. <span class="required">*</span></span>
+          </label>
+        </div>
+      </section>
+
+      <div class="hidden-field">
+        <label for="website">Bitte leer lassen</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <section class="actions">
+        <button id="submitButton" type="submit">Absenden</button>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </section>
+    </form>
+  </main>
+
+  <script>
+    const FORM_ENDPOINT = "/.netlify/functions/send-form";
+
+    const form = document.getElementById("returnForm");
+    const button = document.getElementById("submitButton");
+    const statusBox = document.getElementById("status");
+
+    const maxFileSize = 5 * 1024 * 1024;
+    const allowedFileTypes = ["application/pdf", "image/jpeg", "image/png"];
+
+    function showStatus(type, message) {
+      statusBox.className = "status " + type;
+      statusBox.textContent = message;
+    }
+
+    function validateFile(input) {
+      if (!input.files || input.files.length === 0) return true;
+
+      const file = input.files[0];
+
+      if (file.size > maxFileSize) {
+        showStatus("error", "Der Anhang ist zu groß. Maximal 5 MB erlaubt.");
+        input.focus();
+        return false;
+      }
+
+      if (!allowedFileTypes.includes(file.type)) {
+        showStatus("error", "Nur PDF, JPG und PNG sind als Anhang erlaubt.");
+        input.focus();
+        return false;
+      }
+
+      return true;
+    }
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (!validateFile(document.getElementById("purchaseDocument"))) return;
+      if (!validateFile(document.getElementById("repairDocument"))) return;
+
+      button.disabled = true;
+      button.textContent = "Wird gesendet ...";
+      statusBox.className = "status";
+      statusBox.textContent = "";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.message || "Formular konnte nicht gesendet werden.");
+        }
+
+        showStatus("success", "Vielen Dank. Ihre Zorr Powermatic Retoure wurde erfolgreich übermittelt.");
+        form.reset();
+      } catch (error) {
+        showStatus("error", error.message || "Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail.");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Absenden";
+      }
+    });
+  </script>
+</body>
+</html>
 
