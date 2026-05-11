@@ -265,13 +265,39 @@
     }
 
     .radio-item input[type="radio"] {
-      width: 16px;
-      min-height: 16px;
-      height: 16px;
+      width: 18px;
+      min-height: 18px;
+      height: 18px;
       margin: 0;
       flex-shrink: 0;
-      accent-color: var(--accent);
       cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 2px solid var(--border-lit);
+      border-radius: 50%;
+      background: var(--surface-2);
+      transition: border-color 0.15s;
+      position: relative;
+      display: grid;
+      place-content: center;
+    }
+
+    .radio-item input[type="radio"]::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+
+    .radio-item input[type="radio"]:checked {
+      border-color: var(--accent);
+    }
+
+    .radio-item input[type="radio"]:checked::before {
+      transform: scale(1);
     }
 
     /* ── CHECKBOX GROUP ── */
