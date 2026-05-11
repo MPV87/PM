@@ -4,244 +4,388 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zorr Powermatic Retoure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f5f5f3;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --border: #d9d9d6;
-      --accent: #1f2933;
-      --accent-hover: #374151;
-      --soft: #f7f7f5;
-      --error: #b91c1c;
-      --success: #0f766e;
+      --bg:        #0c0c0c;
+      --surface:   #161616;
+      --surface-2: #1f1f1f;
+      --border:    #2e2e2e;
+      --border-lit:#3d3d3d;
+      --text:      #f0ede8;
+      --muted:     #8a8580;
+      --accent:    #c8a84b;        /* gold from Zorr branding */
+      --accent-dim:#8a7232;
+      --error:     #e05252;
+      --success:   #4caf82;
+      --radius:    10px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 260px);
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
-    }
-
-    .page {
+      line-height: 1.55;
       min-height: 100vh;
-      padding: 32px 16px;
     }
 
-    .logo-wrap {
-      max-width: 752px;
-      margin: 0 auto 28px;
-      text-align: center;
-      padding-top: 8px;
-    }
-
-    .logo-mark {
-      display: inline-flex;
+    /* ── HEADER ── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: #0c0c0c;
+      padding: 0 24px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 58px;
-      padding: 14px 24px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      font-size: 22px;
+      height: 72px;
     }
 
-    .form-card {
-      max-width: 752px;
+    .site-header img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 800px;
       margin: 0 auto;
-      background: var(--card);
+      padding: 48px 20px 72px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(32px, 6vw, 52px);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .hero p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 560px;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.09);
+      border-radius: 14px;
       overflow: hidden;
     }
 
+    /* ── SECTION ── */
     .section {
-      padding: 30px 38px;
-      border-top: 1px solid #ececea;
+      padding: 30px 36px;
+      border-top: 1px solid var(--border);
     }
 
-    .section:first-child {
-      border-top: 0;
+    .section:first-child { border-top: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    h1,
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(200, 168, 75, 0.12);
+      border: 1px solid var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
     h2 {
-      margin: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--text);
-      line-height: 1.2;
     }
 
-    h1 {
-      font-size: 34px;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-size: 23px;
-      letter-spacing: -0.01em;
-    }
-
-    .intro {
-      margin: 10px 0 0;
-      color: var(--muted);
-    }
-
+    /* ── GRID ── */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 16px;
     }
 
-    .field {
-      margin-top: 18px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
+    /* ── FIELDS ── */
+    .field { margin-top: 16px; }
+    .field:first-child { margin-top: 0; }
+    .field.full { grid-column: 1 / -1; }
 
     label,
     .label {
       display: block;
-      margin-bottom: 8px;
+      font-size: 13px;
       font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 7px;
     }
 
-    .required {
-      color: #d93025;
-    }
+    .required { color: var(--accent); }
 
     input,
     select,
     textarea {
       width: 100%;
       min-height: 46px;
+      background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font: inherit;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font: 500 15px/1.4 'Barlow', sans-serif;
       color: var(--text);
-      background: #fff;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8580' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
     }
 
     textarea {
-      min-height: 160px;
+      min-height: 140px;
       resize: vertical;
     }
+
+    input::placeholder,
+    textarea::placeholder { color: var(--muted); opacity: 0.6; }
 
     input:focus,
     select:focus,
     textarea:focus {
-      outline: 3px solid rgba(31, 41, 51, 0.16);
-      border-color: var(--accent);
+      outline: none;
+      border-color: var(--accent-dim);
+      box-shadow: 0 0 0 3px rgba(200, 168, 75, 0.12);
+    }
+
+    input[type="file"] {
+      padding: 10px 14px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+      background: var(--border);
+      border: none;
+      border-radius: 6px;
+      color: var(--text);
+      padding: 4px 12px;
+      font: 600 13px 'Barlow', sans-serif;
+      cursor: pointer;
+      margin-right: 10px;
     }
 
     .sub-label {
       display: block;
       margin-top: 5px;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
       font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
     }
 
-    .radio-group,
-    .checkbox-group {
+    /* ── RADIO GROUP ── */
+    .radio-group {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       margin-top: 8px;
     }
 
-    .radio-item,
-    .checkbox-item {
+    .radio-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 10px;
-      font-weight: 400;
-    }
-
-    .radio-item input,
-    .checkbox-item input {
-      width: auto;
-      min-height: auto;
-      margin-top: 5px;
-    }
-
-    .hint {
-      margin: 8px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .notice {
-      padding: 16px;
-      background: var(--soft);
+      padding: 10px 14px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
       font-size: 15px;
+      font-weight: 500;
     }
 
-    a {
-      color: var(--accent);
-      font-weight: 700;
+    .radio-item:hover {
+      border-color: var(--border-lit);
+      background: #242424;
     }
 
-    .actions {
-      padding: 26px 38px 34px;
-    }
-
-    button {
-      min-width: 180px;
-      border: 0;
-      border-radius: 12px;
-      padding: 13px 22px;
-      background: var(--accent);
-      color: #fff;
-      font: inherit;
-      font-weight: 700;
+    .radio-item input[type="radio"] {
+      width: 16px;
+      min-height: 16px;
+      height: 16px;
+      margin: 0;
+      flex-shrink: 0;
+      accent-color: var(--accent);
       cursor: pointer;
     }
 
-    button:hover {
-      background: var(--accent-hover);
+    /* ── CHECKBOX GROUP ── */
+    .checkbox-group { display: grid; gap: 12px; margin-top: 8px; }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text);
+      line-height: 1.5;
+      cursor: pointer;
     }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      min-height: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* ── NOTICE ── */
+    .notice {
+      padding: 16px;
+      background: rgba(200, 168, 75, 0.05);
+      border: 1px solid var(--accent-dim);
+      border-radius: var(--radius);
+      font-size: 14px;
+      color: #b8b0a0;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .hint {
+      margin: 6px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+
+    /* ── ACTIONS ── */
+    .actions {
+      padding: 24px 36px 36px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 32px;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: #0c0c0c;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    button:hover { background: #d4b55a; }
+    button:active { transform: scale(0.98); }
 
     button:disabled {
-      opacity: 0.65;
+      opacity: 0.5;
       cursor: not-allowed;
+      transform: none;
     }
 
+    /* ── STATUS ── */
     .status {
       display: none;
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 6px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 8px;
     }
 
     .status.success {
       display: block;
       color: var(--success);
-      background: rgba(15, 118, 110, 0.1);
+      background: rgba(76, 175, 130, 0.12);
+      border: 1px solid rgba(76, 175, 130, 0.25);
     }
 
     .status.error {
       display: block;
       color: var(--error);
-      background: rgba(185, 28, 28, 0.1);
+      background: rgba(224, 82, 82, 0.1);
+      border: 1px solid rgba(224, 82, 82, 0.25);
     }
 
+    /* ── LINKS ── */
+    a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HONEYPOT ── */
     .hidden-field {
       position: absolute;
       left: -9999px;
@@ -250,51 +394,57 @@
       overflow: hidden;
     }
 
-    @media (max-width: 700px) {
+    /* ── FOOTER ── */
+    .site-footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .site-footer a { color: var(--muted); }
+    .site-footer a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
       .section,
-      .actions {
-        padding-left: 22px;
-        padding-right: 22px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
+      .actions { padding-left: 20px; padding-right: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 36px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <img src="https://raw.githubusercontent.com/MPV87/PM/main/images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic" />
+  </header>
+
   <main class="page">
-      <div class="logo-wrap" style="text-align:center; margin-bottom:28px;">
-  <img 
-    src="/images/Zorr-Powermatic-Logo.png" 
-    alt="Zorr Powermatic"
-    style="
-      max-width:420px;
-      width:100%;
-      height:auto;
-      display:inline-block;
-      filter: brightness(0);
-    "
-  />
-</div>
 
+    <!-- HERO -->
+    <div class="hero">
+      <span class="hero-label">Service & Garantie</span>
+      <h1>Zorr Powermatic<br>Retoure</h1>
+      <p>Bitte füllen Sie das Formular vollständig aus. Die Angaben helfen uns bei der schnellen Bearbeitung Ihrer Reparatur oder Retoure.</p>
+    </div>
+
+    <!-- FORM -->
     <form id="returnForm" class="form-card" enctype="multipart/form-data">
-      <section class="section">
-        <h1>Zorr Powermatic Retoure</h1>
-        <p class="intro">Bitte füllen Sie das Formular vollständig aus. Die Angaben helfen uns bei der schnellen Bearbeitung Ihrer Reparatur oder Retoure.</p>
-      </section>
 
+      <!-- KUNDENINFORMATION -->
       <section class="section">
-        <h2>Kundeninformation</h2>
+        <div class="section-header">
+          <div class="section-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>Kundeninformation</h2>
+        </div>
 
         <div class="grid">
           <div class="field">
@@ -358,8 +508,18 @@
         </div>
       </section>
 
+      <!-- MASCHINE -->
       <section class="section">
-        <h2>Informationen zur Maschine</h2>
+        <div class="section-header">
+          <div class="section-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="4" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="8" cy="8.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2>Informationen zur Maschine</h2>
+        </div>
 
         <div class="field">
           <span class="label">Um welche Maschine handelt es sich? <span class="required">*</span></span>
@@ -379,18 +539,15 @@
             <label for="serialNumber">Seriennummer <span class="required">*</span></label>
             <input id="serialNumber" name="serialNumber" type="text" required />
             <span class="sub-label">auf der Unterseite der Maschine</span>
-            <div style="margin-top:10px;">
-              <img 
-                src="PM_Seriennummer.png" 
-                alt="Position der Seriennummer" 
-                style="max-width:220px; border-radius:10px; border:1px solid #ddd;"
-              />
-</div>
           </div>
 
           <div class="field">
             <label for="purchaseDate">Kaufdatum</label>
             <input id="purchaseDate" name="purchaseDate" type="date" />
+          </div>
+
+          <div class="field full">
+            <img src="https://www.zorr-powermatic.com/RT/x7Kp9Lm2/PM_Seriennummer.png" alt="Seriennummer – Unterseite der Maschine" style="width:100%;max-width:420px;border-radius:8px;border:1px solid var(--border);display:block;" />
           </div>
 
           <div class="field full">
@@ -435,8 +592,16 @@
         </div>
       </section>
 
+      <!-- ABWICKLUNG -->
       <section class="section">
-        <h2>Abwicklung der Reparatur</h2>
+        <div class="section-header">
+          <div class="section-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2>Abwicklung der Reparatur</h2>
+        </div>
 
         <div class="grid">
           <div class="field full">
@@ -455,7 +620,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-top: 20px;">
           <label for="serviceFeeConsent">Bearbeitungs- und Überprüfungspauschale <span class="required">*</span></label>
           <div class="notice">
             Ich bin damit einverstanden, dass für jede eingesendete Maschine, bei der kein Garantie- oder Gewährleistungsfall vorliegt, eine Bearbeitungs- und Überprüfungspauschale in Höhe von 47,60 € berechnet wird. Die Pauschale wird insbesondere dann erhoben, wenn kein technischer Mangel festgestellt werden kann oder der Defekt auf unsachgemäße Nutzung, fehlende Wartung oder unterlassene Reinigung zurückzuführen ist. Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer, zuzüglich Versandkosten. Ich bestätige, dass ich die Maschine vor dem Versand gemäß Bedienungsanleitung gereinigt und die Punkte der Checkliste geprüft habe. Sollte sich herausstellen, dass die Maschine nicht gereinigt wurde und dadurch ein erhöhter Prüf- oder Reinigungsaufwand entsteht, erkläre ich mich mit der Berechnung der entsprechenden Kosten einverstanden.
@@ -467,7 +632,7 @@
           </select>
         </div>
 
-        <div class="checkbox-group field">
+        <div class="checkbox-group field" style="margin-top: 20px;">
           <label class="checkbox-item">
             <input type="checkbox" name="sealConsent" value="Ja" required />
             <span>Ich bin damit einverstanden, dass bei einem Siegelbruch oder einem Eingriff durch nicht autorisierte Dritte die vollständigen Reparatur- und Servicekosten anfallen, auch wenn sich die Maschine noch innerhalb des Gewährleistungszeitraums befindet. <span class="required">*</span></span>
@@ -475,25 +640,36 @@
 
           <label class="checkbox-item">
             <input type="checkbox" name="privacyConsent" value="Ja" required />
-            <span>Ich habe die <a href="https://www.zorr-powermatic.com/datenschutz.html" target="_blank" rel="noopener">Informationen zum Datenschutz</a> gelesen und bin damit einverstanden. Mir ist bekannt, dass ich der Verwendung meiner Daten jederzeit widersprechen kann. <span class="required">*</span></span>
+            <span>Ich habe die <a href="https://www.kp-plattner.at/kp-plattner/shop/info/datenschutz" target="_blank" rel="noopener">Informationen zum Datenschutz</a> gelesen und bin damit einverstanden. Mir ist bekannt, dass ich der Verwendung meiner Daten jederzeit widersprechen kann. <span class="required">*</span></span>
           </label>
         </div>
       </section>
 
+      <!-- HONEYPOT -->
       <div class="hidden-field">
         <label for="website">Bitte leer lassen</label>
         <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
       </div>
 
-      <section class="actions">
-        <button id="submitButton" type="submit">Absenden</button>
+      <!-- ACTIONS -->
+      <div class="actions">
+        <button id="submitButton" type="submit">Jetzt absenden</button>
         <div id="status" class="status" role="status" aria-live="polite"></div>
-      </section>
+      </div>
+
     </form>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© Zorr Powermatic / KP Plattner GmbH &nbsp;·&nbsp;
+      <a href="https://www.zorr-powermatic.com/impressum.html" target="_blank">Impressum</a> &nbsp;|&nbsp;
+      <a href="https://www.zorr-powermatic.com/datenschutz.html" target="_blank">Datenschutz</a>
+    </p>
+  </footer>
+
   <script>
-    const FORM_ENDPOINT = "https://warm-dasik-e91ddd.netlify.app/.netlify/functions/send-form";
+    const FORM_ENDPOINT = "/.netlify/functions/send-form";
 
     const form = document.getElementById("returnForm");
     const button = document.getElementById("submitButton");
@@ -539,7 +715,7 @@
       if (!validateFile(document.getElementById("repairDocument"))) return;
 
       button.disabled = true;
-      button.textContent = "Wird gesendet ...";
+      button.textContent = "Wird gesendet …";
       statusBox.className = "status";
       statusBox.textContent = "";
 
@@ -563,10 +739,9 @@
         showStatus("error", error.message || "Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail.");
       } finally {
         button.disabled = false;
-        button.textContent = "Absenden";
+        button.textContent = "Jetzt absenden";
       }
     });
   </script>
 </body>
 </html>
-
