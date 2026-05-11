@@ -144,6 +144,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      align-items: start;
     }
 
     /* ── FIELDS ── */
@@ -255,6 +256,12 @@
     .radio-item:hover {
       border-color: var(--border-lit);
       background: #242424;
+    }
+
+    .radio-item:has(input:checked) {
+      border-color: var(--accent);
+      background: rgba(200, 168, 75, 0.1);
+      color: var(--accent);
     }
 
     .radio-item input[type="radio"] {
@@ -535,19 +542,19 @@
         </div>
 
         <div class="grid">
-          <div class="field">
+          <div class="field full">
             <label for="serialNumber">Seriennummer <span class="required">*</span></label>
             <input id="serialNumber" name="serialNumber" type="text" required />
             <span class="sub-label">auf der Unterseite der Maschine</span>
           </div>
 
-          <div class="field">
-            <label for="purchaseDate">Kaufdatum</label>
-            <input id="purchaseDate" name="purchaseDate" type="date" />
+          <div class="field full">
+            <img src="https://www.zorr-powermatic.com/RT/x7Kp9Lm2/PM_Seriennummer.png" alt="Seriennummer – Unterseite der Maschine" style="width:50%;max-width:300px;border-radius:8px;border:1px solid var(--border);display:block;" />
           </div>
 
           <div class="field full">
-            <img src="https://www.zorr-powermatic.com/RT/x7Kp9Lm2/PM_Seriennummer.png" alt="Seriennummer – Unterseite der Maschine" style="width:100%;max-width:420px;border-radius:8px;border:1px solid var(--border);display:block;" />
+            <label for="purchaseDate">Kaufdatum</label>
+            <input id="purchaseDate" name="purchaseDate" type="date" />
           </div>
 
           <div class="field full">
