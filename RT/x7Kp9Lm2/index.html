@@ -599,47 +599,9 @@
         </div>
       </section>
 
-      <!-- ABWICKLUNG -->
+      <!-- ZUSTIMMUNGEN -->
       <section class="section">
-        <div class="section-header">
-          <div class="section-icon">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h2>Abwicklung der Reparatur</h2>
-        </div>
-
-        <div class="grid">
-          <div class="field full">
-            <label for="repairApprovalAmount">Bis zu welchem Betrag können Reparaturen ohne erneute Freigabe durchgeführt werden? <span class="required">*</span></label>
-            <input id="repairApprovalAmount" name="repairApprovalAmount" type="text" placeholder="z. B. 100 €" required />
-            <span class="sub-label">außerhalb der Garantie</span>
-          </div>
-
-          <div class="field full">
-            <label for="ifExceeded">Bei Überschreitung dieses Betrags bitte ich um: <span class="required">*</span></label>
-            <select id="ifExceeded" name="ifExceeded" required>
-              <option value="">Bitte auswählen</option>
-              <option value="Erstellung eines Kostenvoranschlags">Erstellung eines Kostenvoranschlags</option>
-              <option value="Rücksendung des nicht reparierten Produkts">Rücksendung des nicht reparierten Produkts</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field" style="margin-top: 20px;">
-          <label for="serviceFeeConsent">Bearbeitungs- und Überprüfungspauschale <span class="required">*</span></label>
-          <div class="notice">
-            Ich bin damit einverstanden, dass für jede eingesendete Maschine, bei der kein Garantie- oder Gewährleistungsfall vorliegt, eine Bearbeitungs- und Überprüfungspauschale in Höhe von 47,60 € berechnet wird. Die Pauschale wird insbesondere dann erhoben, wenn kein technischer Mangel festgestellt werden kann oder der Defekt auf unsachgemäße Nutzung, fehlende Wartung oder unterlassene Reinigung zurückzuführen ist. Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer, zuzüglich Versandkosten. Ich bestätige, dass ich die Maschine vor dem Versand gemäß Bedienungsanleitung gereinigt und die Punkte der Checkliste geprüft habe. Sollte sich herausstellen, dass die Maschine nicht gereinigt wurde und dadurch ein erhöhter Prüf- oder Reinigungsaufwand entsteht, erkläre ich mich mit der Berechnung der entsprechenden Kosten einverstanden.
-          </div>
-          <select id="serviceFeeConsent" name="serviceFeeConsent" required>
-            <option value="">Bitte auswählen</option>
-            <option value="Ja">Ja</option>
-            <option value="Nein (Reparatur nicht möglich)">Nein (Reparatur nicht möglich)</option>
-          </select>
-        </div>
-
-        <div class="checkbox-group field" style="margin-top: 20px;">
+        <div class="checkbox-group">
           <label class="checkbox-item">
             <input type="checkbox" name="sealConsent" value="Ja" required />
             <span>Ich bin damit einverstanden, dass bei einem Siegelbruch oder einem Eingriff durch nicht autorisierte Dritte die vollständigen Reparatur- und Servicekosten anfallen, auch wenn sich die Maschine noch innerhalb des Gewährleistungszeitraums befindet. <span class="required">*</span></span>
@@ -647,12 +609,12 @@
 
           <label class="checkbox-item">
             <input type="checkbox" name="privacyConsent" value="Ja" required />
-            <span>Ich habe die <a href="https://www.kp-plattner.at/kp-plattner/shop/info/datenschutz" target="_blank" rel="noopener">Informationen zum Datenschutz</a> gelesen und bin damit einverstanden. Mir ist bekannt, dass ich der Verwendung meiner Daten jederzeit widersprechen kann. <span class="required">*</span></span>
+            <span>Ich habe die <a href="https://www.zorr-powermatic.com/datenschutz.html" target="_blank" rel="noopener">Informationen zum Datenschutz</a> gelesen und bin damit einverstanden. Mir ist bekannt, dass ich der Verwendung meiner Daten jederzeit widersprechen kann. <span class="required">*</span></span>
           </label>
         </div>
       </section>
 
-      <!-- HONEYPOT -->
+            <!-- HONEYPOT -->
       <div class="hidden-field">
         <label for="website">Bitte leer lassen</label>
         <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
