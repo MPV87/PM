@@ -683,6 +683,31 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .model-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold-soft);
+      border-bottom: 1px solid rgba(198,164,106,0.4);
+      padding-bottom: 2px;
+      transition: color var(--ease), border-color var(--ease), transform var(--ease);
+    }
+
+    .link-arrow:hover {
+      color: #f3d6a7;
+      border-color: #f3d6a7;
+      transform: translateX(2px);
+    }
+
     .comparison-wrap {
       margin-top: 36px;
       overflow-x: auto;
@@ -842,6 +867,40 @@
     .footer-socials .social-icon {
       width: 40px;
       height: 40px;
+    }
+
+    /* Instagram feed section */
+    .insta-wrap {
+      margin-top: 36px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .insta-embed-slot {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .insta-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+      padding: 60px 20px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .insta-fallback svg {
+      width: 40px;
+      height: 40px;
+      color: var(--gold-soft);
     }
 
     @media (max-width: 1080px) {
@@ -1063,6 +1122,7 @@
           <a href="#modelle">Modelle</a>
           <a href="#vergleich">Vergleich</a>
           <a href="#pflege">Pflege</a>
+          <a href="#instagram">Instagram</a>
           <a href="#faq">FAQ</a>
           <a href="troubleshooting.html">Troubleshooting</a>
           <a href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic">Kontakt</a>
@@ -1106,6 +1166,7 @@
         <a href="#modelle">Modelle</a>
         <a href="#vergleich">Vergleich</a>
         <a href="#pflege">Pflege</a>
+        <a href="#instagram">Instagram</a>
         <a href="#faq">FAQ</a>
         <a href="troubleshooting.html">Troubleshooting</a>
         <a href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic">Kontakt</a>
@@ -1190,6 +1251,9 @@
                 <span class="chip">Digitales Display</span>
                 <span class="chip">Premium-Komfort</span>
               </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-3-deluxe.html">Zur Produktseite →</a>
+              </div>
             </div>
             <div class="focus-visual">
               <img class="float-image" src="images/powermatic-3-deluxe.png" alt="Zorr Powermatic III+ Deluxe" />
@@ -1208,6 +1272,9 @@
                 <span class="chip">AUTO & E-AUTO</span>
                 <span class="chip">Tabakschneider</span>
                 <span class="chip">Reinigungsfunktion</span>
+              </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-5-deluxe.html">Zur Produktseite →</a>
               </div>
             </div>
             <div class="focus-visual">
@@ -1267,6 +1334,9 @@
                   </div>
                 </div>
               </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-mini.html">Zur Produktseite →</a>
+              </div>
             </div>
           </article>
 
@@ -1308,6 +1378,9 @@
                     <p><strong>Position im Sortiment:</strong> Einstieg</p>
                   </div>
                 </div>
+              </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-1-elite.html">Zur Produktseite →</a>
               </div>
             </div>
           </article>
@@ -1351,6 +1424,9 @@
                     <p><strong>Hinweis:</strong> Stromkabel inkludiert</p>
                   </div>
                 </div>
+              </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-2-plus.html">Zur Produktseite →</a>
               </div>
             </div>
           </article>
@@ -1396,6 +1472,9 @@
                   </div>
                 </div>
               </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-3-deluxe.html">Zur Produktseite →</a>
+              </div>
             </div>
           </article>
 
@@ -1438,6 +1517,9 @@
                     <p><strong>Hinweis:</strong> Stromkabel inkludiert</p>
                   </div>
                 </div>
+              </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-4-plus.html">Zur Produktseite →</a>
               </div>
             </div>
           </article>
@@ -1488,6 +1570,9 @@
                     <p><strong>Hinweis:</strong> Stromkabel inkludiert</p>
                   </div>
                 </div>
+              </div>
+              <div class="model-links">
+                <a class="link-arrow" href="powermatic-5-deluxe.html">Zur Produktseite →</a>
               </div>
             </div>
           </article>
@@ -1586,6 +1671,29 @@
               <div class="tip"><strong>Nicht überfüllen:</strong> Zu viel Tabak kann Verstopfungen verursachen und die Mechanik belasten.</div>
             </div>
             <p style="margin-top:18px;font-size:14px;">* Gerät nur im ausgeschalteten Zustand reinigen. Elektrische Geräte vor der Reinigung immer ausschalten und nicht in den Stopfbereich greifen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="instagram">
+      <div class="container">
+        <span class="eyebrow reveal">Social</span>
+        <h2 class="reveal">Zorr Powermatic auf Instagram</h2>
+        <p class="lead reveal">Neuigkeiten, Anwendungstipps und Einblicke direkt von @zorr_powermatic.</p>
+
+        <div class="insta-wrap reveal">
+          <!--
+            INSTAGRAM LIVE-FEED WIDGET
+            Hier den Embed-Code deines Widget-Anbieters (z.B. Elfsight, LightWidget, SnapWidget) einfügen.
+            Sobald der Account beim Anbieter verbunden und der Feed für @zorr_powermatic erstellt ist,
+            liefert der Anbieter ein Script-Snippet + ein div mit Widget-ID – beides hier in insta-embed-slot einsetzen
+            und den insta-fallback Block darunter entfernen.
+          -->
+          <div class="insta-embed-slot" id="insta-embed-slot">
+            <!-- LightWidget: Instagram-Feed @zorr_powermatic -->
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+            <iframe src="//lightwidget.com/widgets/01e476245cda5809880d21b1a5a0171c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
           </div>
         </div>
       </div>
