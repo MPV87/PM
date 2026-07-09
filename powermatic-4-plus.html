@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Powermatic IV+ – Zorr Powermatic</title>
+  <meta name="description" content="Powermatic IV+: Details, technische Daten und Video zur Zorr Powermatic IV+. Teil der Zorr Powermatic Serie." />
+  <meta name="author" content="KP Plattner" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zorr-powermatic.com/powermatic-4-plus.html" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+
+  <meta property="og:title" content="Powermatic IV+ – Zorr Powermatic" />
+  <meta property="og:description" content="Details, technische Daten und Video zur Zorr Powermatic IV+." />
+  <meta property="og:type" content="product" />
+  <meta property="og:url" content="https://zorr-powermatic.com/powermatic-4-plus.html" />
+  <meta property="og:image" content="https://zorr-powermatic.com/images/powermatic-4-plus.png" />
+  <meta property="og:locale" content="de_AT" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Zorr Powermatic IV+",
+    "brand": {"@type":"Brand","name":"Zorr"},
+    "image":"https://zorr-powermatic.com/images/powermatic-4-plus.png",
+    "url":"https://zorr-powermatic.com/powermatic-4-plus.html"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-soft: #111111;
+      --panel: rgba(255,255,255,0.04);
+      --line: rgba(255,255,255,0.10);
+      --text: #f5f1ea;
+      --muted: #b7aea2;
+      --gold: #c6a46a;
+      --gold-soft: #e2c38f;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --max: 1240px;
+      --ease: 280ms ease;
+      --nav-h: 82px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(198,164,106,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(198,164,106,0.08), transparent 24%),
+        linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.08; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(38px, 7vw, 72px); font-weight: 700; }
+    h2 { font-size: clamp(30px, 4vw, 54px); font-weight: 650; }
+    h3 { font-size: clamp(22px, 2.6vw, 34px); font-weight: 650; }
+
+    p { margin: 0 0 16px; color: var(--muted); font-size: 17px; }
+    .lead { font-size: clamp(18px, 2vw, 22px); max-width: 760px; color: #ddd3c6; }
+
+    .section { padding: 90px 0; position: relative; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms ease, transform 700ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(10,10,10,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner { min-height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; line-height: 1; flex-shrink: 0; }
+    .brand-logo-only img { height: 52px; width: auto; object-fit: contain; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .nav-links a { color: #ddd2c3; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; transition: color var(--ease), transform var(--ease); }
+    .nav-links a:hover { color: var(--white); transform: translateY(-1px); }
+
+    .socials { display: flex; align-items: center; gap: 10px; }
+    .social-icon {
+      width: 42px; height: 42px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.03);
+      display: inline-flex; align-items: center; justify-content: center;
+      color: var(--gold-soft);
+      transition: transform var(--ease), border-color var(--ease), background var(--ease), color var(--ease);
+    }
+    .social-icon:hover { transform: translateY(-2px); border-color: rgba(198,164,106,0.45); background: rgba(198,164,106,0.08); color: #f3d6a7; }
+    .social-icon svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .menu-toggle {
+      display: none; width: 48px; height: 48px;
+      border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03);
+      border-radius: 14px; align-items: center; justify-content: center; cursor: pointer; color: var(--white);
+    }
+    .menu-toggle svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    .mobile-menu { display: none; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 0 22px; border-radius: 999px; font-weight: 600; letter-spacing: 0.02em;
+      transition: transform var(--ease), background var(--ease), border-color var(--ease), box-shadow var(--ease);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(180deg, #d9b67a 0%, #b88f52 100%); color: #140f08; box-shadow: 0 10px 30px rgba(198,164,106,0.22); }
+    .btn-primary:hover { box-shadow: 0 14px 34px rgba(198,164,106,0.28); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.14); color: var(--white); background: rgba(255,255,255,0.03); }
+
+    /* Breadcrumb */
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 26px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--gold-soft); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Product hero */
+    .p-hero { padding: 50px 0 20px; }
+    .p-hero-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+    .p-hero-stage { position: relative; min-height: 460px; display: flex; align-items: center; justify-content: center; }
+    .glow { position: absolute; inset: 8% 8% auto 8%; height: 60%; border-radius: 50%; background: radial-gradient(circle, rgba(198,164,106,0.35) 0%, rgba(198,164,106,0.10) 35%, transparent 72%); filter: blur(36px); pointer-events: none; animation: pulseGlow 6s ease-in-out infinite; }
+    @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.95; } 50% { transform: scale(1.06); opacity: 0.75; } }
+    .float-image { animation: floatMachine 6s ease-in-out infinite; will-change: transform; }
+    @keyframes floatMachine { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+    .p-hero-card {
+      position: relative; width: 100%; max-width: 480px; padding: 32px; border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)), rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10); box-shadow: var(--shadow);
+    }
+    .p-hero-card img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.55)); position: relative; z-index: 2; }
+
+    .p-hero-badge {
+      position: absolute; top: 18px; right: 18px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #16110a; padding: 12px 16px; border-radius: 999px;
+      background: linear-gradient(180deg, #e4c58e 0%, #c79f61 100%);
+      border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 10px 30px rgba(0,0,0,0.35); z-index: 10; font-weight: 700;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .chip { padding: 9px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: #efe5d7; font-size: 13px; }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+
+    /* Content panels */
+    .panel, .video-wrap, .specs-wrap, .nav-models {
+      transition: transform var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease);
+    }
+    .panel:hover, .video-wrap:hover, .specs-wrap:hover { transform: translateY(-4px); border-color: rgba(198,164,106,0.24); }
+
+    .panel {
+      padding: 34px; border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow);
+    }
+
+    .two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; margin-top: 24px; }
+
+    /* Video */
+    .video-wrap {
+      border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    }
+    .video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { padding: 20px 26px; font-size: 14px; color: var(--muted); }
+    .video-caption a { color: var(--gold-soft); }
+    .video-caption a:hover { text-decoration: underline; }
+
+    /* Specs table */
+    .specs-wrap {
+      margin-top: 12px; border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow);
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); vertical-align: top; font-size: 15px; }
+    th { width: 42%; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-soft); background: rgba(255,255,255,0.03); font-weight: 600; }
+    td { color: #e7ddcf; }
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+
+    /* Prev/next nav */
+    .nav-models { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+    .nav-model-link {
+      padding: 22px 26px; border-radius: 22px; border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      transition: transform var(--ease), border-color var(--ease);
+    }
+    .nav-model-link:hover { transform: translateY(-3px); border-color: rgba(198,164,106,0.3); }
+    .nav-model-link .dir { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-soft); margin-bottom: 6px; display: block; }
+    .nav-model-link.next { text-align: right; }
+
+    .cta {
+      text-align: center; padding: 44px 28px; border-radius: 30px;
+      background: radial-gradient(circle at top, rgba(198,164,106,0.18), transparent 50%), linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow);
+      transition: transform var(--ease), border-color var(--ease);
+    }
+    .cta:hover { transform: translateY(-4px); border-color: rgba(198,164,106,0.24); }
+
+    .footer { padding: 36px 0 60px; color: #a99f91; font-size: 14px; }
+    .footer-line { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .footer-links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-links a { color: var(--gold-soft); }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+    .footer-socials .social-icon { width: 40px; height: 40px; }
+
+    @media (max-width: 1080px) {
+      .p-hero-grid, .two-col, .nav-models { grid-template-columns: 1fr; }
+      .p-hero-stage { min-height: auto; order: -1; }
+      .nav-model-link.next { text-align: left; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-right .nav-links, .nav-right .socials { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .mobile-menu { display: block; position: fixed; inset: 0; z-index: 120; pointer-events: none; }
+      .mobile-menu-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; transition: opacity var(--ease); }
+      .mobile-menu-panel {
+        position: absolute; top: 0; right: 0; width: min(86vw, 380px); height: 100%;
+        background: rgba(15,15,15,0.97); border-left: 1px solid rgba(255,255,255,0.08);
+        transform: translateX(100%); transition: transform var(--ease); padding: 22px;
+        display: flex; flex-direction: column; gap: 18px; box-shadow: -20px 0 50px rgba(0,0,0,0.35);
+      }
+      .mobile-menu.open { pointer-events: auto; }
+      .mobile-menu.open .mobile-menu-backdrop { opacity: 1; }
+      .mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+      .mobile-menu-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .mobile-menu-top img { height: 40px; width: auto; }
+      .mobile-close { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03); color: var(--white); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+      .mobile-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+      .mobile-links { display: grid; gap: 6px; margin-top: 10px; }
+      .mobile-links a { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 16px; color: #f2e9db; }
+      .mobile-socials { display: flex; gap: 10px; margin-top: auto; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .section { padding: 70px 0; }
+      .nav-inner { min-height: 72px; }
+      .brand-logo-only img { height: 40px; }
+      .p-hero-card { padding: 22px; border-radius: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand brand-logo-only" aria-label="Startseite Zorr Powermatic">
+        <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="index.html#modelle">Modelle</a>
+          <a href="index.html#vergleich">Vergleich</a>
+          <a href="index.html#pflege">Pflege</a>
+          <a href="index.html#instagram">Instagram</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic">Kontakt</a>
+        </div>
+
+        <div class="socials">
+          <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/></svg>
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-top">
+        <img src="images/Zorr-Powermatic-Logo.png" alt="Zorr Powermatic Logo" />
+        <button class="mobile-close" id="mobileClose" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6l-12 12"></path></svg>
+        </button>
+      </div>
+      <div class="mobile-links">
+        <a href="index.html#modelle">Modelle</a>
+        <a href="index.html#vergleich">Vergleich</a>
+        <a href="index.html#pflege">Pflege</a>
+        <a href="index.html#instagram">Instagram</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic">Kontakt</a>
+      </div>
+      <div class="mobile-socials">
+        <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section p-hero">
+      <div class="container">
+        <div class="breadcrumb reveal">
+          <a href="index.html">Startseite</a>
+          <span>/</span>
+          <a href="index.html#modelle">Modelle</a>
+          <span>/</span>
+          <span>Powermatic IV+</span>
+        </div>
+
+        <div class="p-hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Elektrisch · effizient</span>
+            <h1>Zorr Powermatic IV+</h1>
+            <p class="lead">Die ZORR® Powermatic IV+ ist für Nutzer mit höherem Stopfvolumen ausgelegt. Das Modell verbindet kompaktes Format mit hoher Effizienz und ist besonders interessant, wenn schnelleres Arbeiten mit weniger Unterbrechungen im Vordergrund steht.</p>
+
+            <div class="chips">
+              <span class="chip">Kompakte Bauweise</span>
+              <span class="chip">Leistungsstarker Motor</span>
+              <span class="chip">Großer Trichter</span>
+              <span class="chip">Perfekt gefüllte Zigaretten</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic%20IV%2B">Anfrage senden</a>
+              <a class="btn btn-secondary" href="index.html#vergleich">Modelle vergleichen</a>
+            </div>
+          </div>
+
+          <div class="p-hero-stage reveal">
+            <div class="glow"></div>
+            <div class="p-hero-card">
+              
+              <img class="float-image" src="images/powermatic-4-plus.png" alt="Zorr Powermatic IV+" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="two-col">
+          <div class="panel reveal">
+            <span class="eyebrow">Im Detail</span>
+            <h2>Über die Powermatic IV+</h2>
+            <p>Die Zorr Powermatic IV+ eignet sich besonders für Nutzer mit höherem Bedarf, die Wert auf zügiges Arbeiten und einen flüssigen Ablauf legen. Der größere Tabaktrichter reduziert Unterbrechungen, während die elektrische Arbeitsweise den Komfort im Alltag deutlich erhöht.</p>
+          </div>
+
+          <div class="panel reveal">
+            <span class="eyebrow">Video</span>
+            <h3 style="margin-bottom:6px;">Powermatic IV+ in Aktion</h3>
+            <p style="margin-bottom:0;">Ein Eindruck zur Bedienung und Funktionsweise.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;">
+
+        <div class="video-wrap reveal">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/AvKsmM8NSu4" title="Zorr Powermatic IV+" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">Video zur Powermatic IV+ &ndash; auch direkt auf dem <a href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer">YouTube-Kanal @ZORR_Official</a>.</div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <span class="eyebrow reveal">Technische Daten</span>
+        <h2 class="reveal">Powermatic IV+ im Überblick</h2>
+
+        <div class="specs-wrap reveal">
+          <table>
+              <tr><th>Artikelnummer</th><td>18119</td></tr>
+              <tr><th>Preis</th><td>Preis auf Anfrage</td></tr>
+              <tr><th>Maße</th><td>27 × 22 × 9 cm</td></tr>
+              <tr><th>Verpackungseinheit</th><td>12 Stück pro Karton</td></tr>
+              <tr><th>Geeignet für</th><td>Nutzer mit höherem Stopfvolumen / Vielraucher</td></tr>
+              <tr><th>Position im Sortiment</th><td>Upper-Mid</td></tr>
+              <tr><th>Bedienung</th><td>Elektrisch</td></tr>
+              <tr><th>Hinweis</th><td>Stromkabel inkludiert</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <span class="eyebrow reveal">Weiter stöbern</span>
+        <div class="nav-models">
+          <a class="nav-model-link prev reveal" href="powermatic-3-deluxe.html">
+            <span class="dir">← Vorheriges Modell</span>
+            <strong>Powermatic III+ Deluxe</strong>
+          </a>
+          <a class="nav-model-link next reveal" href="powermatic-5-deluxe.html">
+            <span class="dir">Nächstes Modell →</span>
+            <strong>Powermatic V+ Deluxe</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Fragen zur Powermatic IV+?</h2>
+          <p class="lead" style="margin:0 auto 24px;">Wir beraten Sie gerne zur passenden Zorr Powermatic für Ihren Bedarf.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic%20IV%2B">Jetzt Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-line">
+        <div>© Zorr Powermatic / KP Plattner GmbH</div>
+        <div class="footer-socials">
+          <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.youtube.com/@ZORR_Official" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/></svg>
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <span>|</span>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    if (menuToggle) menuToggle.addEventListener('click', openMenu);
+    if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+  </script>
+
+</body>
+</html>
