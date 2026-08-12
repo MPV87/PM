@@ -9,6 +9,9 @@
   <meta name="author" content="KP Plattner" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://zorr-powermatic.com/powermatic-5-deluxe.html" />
+  <link rel="alternate" hreflang="de" href="https://zorr-powermatic.com/powermatic-5-deluxe.html" />
+  <link rel="alternate" hreflang="en" href="https://zorr-powermatic.com/powermatic-5-deluxe-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://zorr-powermatic.com/powermatic-5-deluxe.html" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <meta property="og:title" content="Powermatic V+ Deluxe – Zorr Powermatic" />
@@ -102,6 +105,35 @@
     .nav-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
     .nav-links a { color: #ddd2c3; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; transition: color var(--ease), transform var(--ease); }
     .nav-links a:hover { color: var(--white); transform: translateY(-1px); }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      padding: 4px;
+    }
+    .lang-switch a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 30px;
+      padding: 0 4px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #ddd2c3;
+      transition: background var(--ease), color var(--ease);
+    }
+    .lang-switch a:hover { color: var(--white); }
+    .lang-switch a.active {
+      background: linear-gradient(180deg, #d9b67a 0%, #b88f52 100%);
+      color: #140f08;
+    }
 
     .socials { display: flex; align-items: center; gap: 10px; }
     .social-icon {
@@ -258,6 +290,16 @@
       .mobile-links { display: grid; gap: 6px; margin-top: 10px; }
       .mobile-links a { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 16px; color: #f2e9db; }
       .mobile-socials { display: flex; gap: 10px; margin-top: auto; }
+      .mobile-lang-switch { display: flex; gap: 8px; margin-top: 4px; }
+      .mobile-lang-switch a {
+        flex: 1; text-align: center; padding: 10px 0; border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03);
+        font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #ddd2c3;
+      }
+      .mobile-lang-switch a.active {
+        background: linear-gradient(180deg, #d9b67a 0%, #b88f52 100%);
+        color: #140f08;
+      }
     }
 
     @media (max-width: 760px) {
@@ -302,6 +344,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.8 1 12 1 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2c1.5.5 8.6.5 8.6.5s7.1 0 8.6-.5a2.9 2.9 0 0 0 2-2c.4-1.5.4-4.7.4-4.7Zm-14 3.8V8.2l6.5 3.8L9 15.8Z"/></svg>
           </a>
         </div>
+        <div class="lang-switch" role="group" aria-label="Sprache wählen">
+          <a href="powermatic-5-deluxe.html" class="active" aria-current="page">DE</a>
+          <a href="powermatic-5-deluxe-en.html">EN</a>
+        </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
@@ -327,6 +373,10 @@
         <a href="index.html#faq">FAQ</a>
         <a href="troubleshooting.html">Troubleshooting</a>
         <a href="mailto:office@kp-plattner.at?subject=Zorr%20Powermatic">Kontakt</a>
+      </div>
+      <div class="mobile-lang-switch" role="group" aria-label="Sprache wählen">
+        <a href="powermatic-5-deluxe.html" class="active" aria-current="page">Deutsch</a>
+        <a href="powermatic-5-deluxe-en.html">English</a>
       </div>
       <div class="mobile-socials">
         <a class="social-icon" href="https://www.instagram.com/zorr_powermatic" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
